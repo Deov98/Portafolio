@@ -93,7 +93,7 @@ header{
 
 
 
-.sectiontitle{
+.section h2{
     font-size: 2.5rem; 
     font-weight: 700; 
     text-align: center;
@@ -113,8 +113,8 @@ header{
 .container {
    display: grid;
     grid-column: 100px; 
-    grid-template-columns: repeat(4, 1fr); /*Columnas*/
-    grid-template-columns: repeat(3, 1fr); /*Filas*/
+    grid-template-columns: repeat(1, 1fr); /*Columnas*/
+    grid-template-columns: repeat(2, 1fr); /*Filas*/
   /* El corazón del diseño responsivo:
      - auto-fit: crea tantas columnas como quepan.
      - minmax(): cada columna tendrá un ancho mínimo de 250px y crecerá para ocupar el espacio disponible de forma equitativa (1fr). */
@@ -128,7 +128,7 @@ header{
 .card{
     display: flex;
     gap: 20px;
-    height: 400px;
+    height: 200px;
     width: 300px;
     background-color: #17141d;
     border-radius: 10px;
