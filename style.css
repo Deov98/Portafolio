@@ -20,7 +20,7 @@ header{
     z-index: 50;
     box-shadow: 0 1px 3px rgba(202, 14, 14, 0.1);
     margin-bottom: 50px;
-}
+    }
 .navbar {
     /*display: flex;
     justify-content: space-between;
@@ -31,21 +31,20 @@ header{
     /*border: 2px solid rgba(255, 255, 255, 0.18);*/
 
     display: flex;
+    position: fixed;
     justify-content: space-between;
     align-items: center;
     margin-top: -1%;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     padding: 15px;
-    position: fixed;
-    width: 30%;
+    width: 40%;
     left: 50%;
     transform: translateX(-50%);
     top: 2rem;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.42);
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
-
 }
 
 .navitem {
@@ -58,11 +57,10 @@ header{
     font-family: 'TASA Explorer', sans-serif;
     color: #ffffff;
     transition: color 0.3s;
-    align-items: center;
 
 }
 .navlink:hover {
-    color: #d6eb19; /* text-indigo-600 */
+    color: #d6eb19; 
 }
 /*----------Titulo y nombre ------------*/
 
@@ -70,7 +68,7 @@ header{
     text-align: left;
     margin: 100px auto auto 490px;
     padding: 50px 10px;
-    font-family: 'TASA Explorer', sans-serif;
+    font-family:'TASA Explorer', sans-serif;
     color: #ffffff;
     width: 100%;
 }
@@ -81,8 +79,10 @@ header{
     background-color: #1f2937;
     font-size:medium;
     font-weight: 30;
-    margin: auto 0 0 0;
-
+   justify-content: center;
+   padding: 6px 15px;
+    text-decoration: none;
+    border: 1px solid #242424;
 }
 
 .myname h1{
@@ -100,46 +100,50 @@ header{
     line-height: 1.5;
     max-width: 500px;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 
 .button{
     width: auto;
-    gap: 4px;
-    justify-content: center;
+    gap: 5px;
+    display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    align-items:center;
+    
 }
 .button a{
     color: rgb(255, 255, 255);
-    background-color: rgb(96, 0, 72);
-    text-align: center;
-    padding: 12px 15px;
+    background-color: #08093ea6;
     text-decoration: none;
-    display: inline-block;
     border-radius: 12px;
     font-size: 23px; 
     font-weight: 300;
+    text-align: center;
+    padding: 8px 10px;
+    border: 1px solid #242424;
+   
+    
 }
 
 .button a:hover{
-    background-color: #007a53;
+    background-color: #0e7f6e;
     transition: 0.3s;
 }
 
 .button img{
     color: rgb(255, 255, 255);
-    background-color: rgb(96, 0, 72);
+    background-color: #08093ea6;
     height: 50px;
     width: 50px;
-    margin: 20px 0 0 0;
-    padding: 12px 10px;
-    display:inline-block;
+    padding: 10px 10px;
     border-radius: 12px;
-    align-items: center;
+    border: 1px solid #242424;
 }
 
 .button img:hover{
-    background-color: #007a53;
+    background-color: #133f7e;
     transition: 0.3s;
 }
 
@@ -254,5 +258,97 @@ header{
     margin-bottom: 20px;
     color: #ffffff;
 }
+
+
+
+
+img, .iconcard {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.95rem;
+    }
+    .myname h1 {
+        font-size: 1rem;
+    }
+    .container {
+        padding: 10px;
+        gap: 16px;
+    }
+    .card {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        padding: 10px;
+    }
+    footer {
+        padding: 16px 4px;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .navbar {
+        width: 90%;
+        top: 1rem;
+        padding: 10px;
+        border-radius: 12px;
+    }
+    .navitem {
+        font-size: 1.1rem;
+        gap: 18px;
+    }
+    .myname {
+        margin: 80px 10px 0 10px;
+        padding: 30px 5px;
+        text-align: center;
+    }
+    .myname h1 {
+        font-size: 2.2rem;
+    }
+    .myname p {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+    .button {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        width: 98%;
+        left: 1%;
+        transform: none;
+        top: 0.5rem;
+        padding: 8px;
+    }
+    .navitem {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 1rem;
+    }
+    .myname {
+        margin: 60px 5px 0 5px;
+        padding: 18px 2px;
+        text-align: center;
+    }
+    .myname h1 {
+        font-size: 1.3rem;
+    }
+    .button {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+}
+
 
 

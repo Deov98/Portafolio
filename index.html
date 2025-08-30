@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Web Responsivo</title>
+    <title>Portafolio</title>
     <!-- Incluye el CDN de Tailwind CSS para un estilo rápido y responsivo -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fuente Inter de Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-  
+
 </head>
+
 <body>
     <!-- Navegación (Header) -->
     <header>
         <nav class="navbar">
             <div class="navitem">
-                <a href="#inicio" class="navlink">Sobre Mí</a>
+                <a href="#myname" class="navlink">Sobre Mí</a>
                 <a href="#secciones" class="navlink">Habilidades</a>
                 <a href="#experiencia" class="navlink">Experiencia</a>
-                <a href="#contacto"class="navlink">Contacto</a>
+                <a href="#contacto" class="navlink">Contacto</a>
             </div>
         </nav>
     </header>
 
     <!-- Título Principal Centrado -->
-    <section class="myname">
+    <section class="myname" id="myname">
         <span>Disponible para oportunidades</span>
         <h1>Hola, soy Daniel Olavarría Varela</h1>
-        <p> 
+        <p>
             Ingeniero en Informatica.
-            Me apasiona la tecnología y siempre estoy buscando aprender cosas nuevas. 
         </p>
         <div class="button">
-             <a href="#">Descargar CV</a>
+            <a href="#">Descargar CV</a>
             <img src="img/icongmail.png" href="www.gmail.com" alt="icongmail">
-            <img src="img/iconlinkedin.png" href="https://www.linkedin.com/in/daniel-eduardo-olavarria-varela-b0190a233/" target="_blank">
+            <img src="img/iconlinkedin.png" href="https://www.linkedin.com/in/daniel-eduardo-olavarria-varela-b0190a233/" alt="iconlinkedin" target="_blank">
         </div>
     </section>
 
     <!-- Contenido Principal con 3 Secciones -->
     <main id="mainsecciones">
-    <!-- Sección de Cartas de Presentación -->
-     <section class="section1">
-        <h2> Sobre mi</h2>
-
-     </section>
-    <section class="section2">
+        <!-- Sección de Cartas de Presentación -->
+        <section class="section1">
+            <h2>Sobre mi</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                <p>
+                    Soy un desarrollador de software junior. Me apasiona la tecnologia y siempre estoy en busqueda de
+                    aprender cosas nuevas, me gusta trabajar en equipo y construir productos utiles y accesibles.
+                </p>
+            </div>
+        </section>
+        <section class="section2">
             <h2>Mis Habilidades</h2>
-    <!-- Tarjetas version 1
+            <!-- Tarjetas version 1
             <div class="sectiongrid">
                
                 <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
@@ -84,7 +90,7 @@
             </div>-->
 
             <div class="container">
-              <div class="card">
+                <div class="card">
                     <img src="img/iconhtml.png" alt="iconohtml" class="iconcard">
                 </div>
                 <div class="card">
@@ -104,13 +110,15 @@
                 </div>
             </div>
 
-    </section>
+        </section>
 
         <!-- Otra Sección (Opcional) -->
         <section class="section3">
             <h2>Experiencia</h2>
             <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-                <p class="text-gray-600 text-center">Aquí puedes agregar más contenido relevante, como una galería de imágenes, un formulario de contacto o más información sobre tu proyecto.</p>
+                <p class="text-gray-600 text-center">
+                    Aquí puedes agregar más contenido relevante, como una galería de
+                    imágenes, un formulario de contacto o más información sobre tu proyecto.</p>
             </div>
         </section>
 
@@ -118,7 +126,9 @@
         <section class="section4">
             <h2>Proyectos Realizados</h2>
             <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-                <p class="text-gray-600 text-center">Esta es la tercera sección de la página. Puedes personalizarla completamente para que se adapte a tus necesidades.</p>
+                <p class="text-gray-600 text-center">
+                    Esta es la tercera sección de la página. Puedes personalizarla
+                    completamente para que se adapte a tus necesidades.</p>
             </div>
         </section>
     </main>
@@ -140,4 +150,5 @@
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
+
 </html>
