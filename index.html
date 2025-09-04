@@ -11,130 +11,134 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
-    <!-- Navegación (Header) -->
-    <header>
+    <main class="mainsecciones">
+        <!-- Navigation - Ahora fijo -->
         <nav class="navbar">
             <div class="navitem">
-                <a href="#sobremi" class="navlink">Sobre Mí</a>
-                <a href="#secciones" class="navlink">Experiencia</a>
-                <a href="#experiencia" class="navlink">Proeyctos</a>
-                <a href="#contacto" class="navlink">Contacto</a>
+                <a href="#inicio" class="navlink active" data-target="inicio">Sobre Mí</a>
+                <a href="#experiencia" class="navlink" data-target="experiencia">Experiencia</a>
+                <a href="#proyectos" class="navlink" data-target="proyectos">Proyectos</a>
+                <a href="#contacto" class="navlink" data-target="contacto">Contacto</a>
+                <button id="theme-toggle" class="navlink" style="background:none;border:none;cursor:pointer;">
+                    🌙
+                </button>
             </div>
         </nav>
-    </header>
 
-    <!-- Título Principal Centrado -->
-    <section class="myname" id="myname">
-        <span>Disponible para oportunidades</span>
-        <h1>Hola, soy Daniel Olavarría Varela</h1>
-        <p>
-            Ingeniero en Informatica.
-        </p>
-        <div class="button">
-            <a href="#">Descargar CV</a>
-            <img src="img/icongmail.png" href="www.gmail.com" alt="icongmail">
-            <img src="img/iconlinkedin.png" href="https://www.linkedin.com/in/daniel-eduardo-olavarria-varela-b0190a233/" alt="iconlinkedin" target="_blank">
-        </div>
-    </section>
-
-    <!-- Contenido Principal con 3 Secciones -->
-    <main id="mainsecciones">
-        <!-- Sección de Cartas de Presentación -->
-        <section class="section1">
-            <h2>Sobre mi</h2>
-            <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-                <p>
-                    Soy un desarrollador de software junior. Me apasiona la tecnologia y siempre estoy en busqueda de
-                    aprender cosas nuevas, me gusta trabajar en equipo y construir productos utiles y accesibles.
-                </p>
-            </div>
-        </section>
-        <section class="section2">
-            <h2>Mis Habilidades</h2>
-            <!-- Tarjetas version 1
-            <div class="sectiongrid">
-               
-                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Carta 1</h3>
-                    <p class="text-gray-600">Descripción detallada de la carta de presentación 1. Ideal para mostrar un servicio o producto principal.</p>
+        <!-- Header -->
+        <section id="inicio" class="section">
+            <header class="header">
+                <h1 class="profile-name">Daniel Eduardo Olavarría Varela</h1>
+                <p class="profile-subtitle">Ingeniero Informático - Analista Programador</p>
+                <div class="profile-buttons">
+                    <a href="#" class="btn">Descargar CV</a>
+                    <a href="#" class="btn">M</a>
+                    <a href="#" class="btn">in</a>
                 </div>
+            </header>
+
+            <!-- Skills Section -->
+            <div class="skills-section">
+                <h2 class="section-title">Conocimientos en:</h2>
                 
-                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Carta 2</h3>
-                    <p class="text-gray-600">Descripción detallada de la carta de presentación 2. Resalta las características y beneficios clave.</p>
-                </div>
-               
-                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Carta 3</h3>
-                    <p class="text-gray-600">Descripción detallada de la carta de presentación 3. Perfecta para un llamado a la acción.</p>
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">web</h3>
+                        <div class="skill-pills">
+                            <span class="skill-pill">HTML</span>
+                            <span class="skill-pill">CSS</span>
+                            <span class="skill-pill">JavaScript</span>
+                            <span class="skill-pill">Bootstrap</span>
+                            <span class="skill-pill">Tailwindcss</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">tecnologías</h3>
+                        <div class="skill-pills">
+                            <span class="skill-pill">Vue.js</span>
+                            <span class="skill-pill">Laravel</span>
+                            <span class="skill-pill">Node.js</span>
+                            <span class="skill-pill">Docker</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Carta 4</h3>
-                    <p class="text-gray-600">Descripción detallada de la carta de presentación 3. Perfecta para un llamado a la acción.</p>
+                <div class="skills-secondary">
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">lenguajes</h3>
+                        <div class="skill-pills">
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">Java</span>
+                            <span class="skill-pill">C++</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">base de datos</h3>
+                        <div class="skill-pills">
+                            <span class="skill-pill">MySQL</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Carta 5</h3>
-                    <p class="text-gray-600">Descripción detallada de la carta de presentación 3. Perfecta para un llamado a la acción.</p>
+                <div class="skill-group" style="margin-top: 20px;">
+                    <h3 class="skill-group-title">aprendiendo</h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">TypeScript</span>
+                        <span class="skill-pill">MongoDB</span>
+                        <span class="skill-pill">AWS</span>
+                    </div>
                 </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Carta 6</h3>
-                    <p class="text-gray-600">Descripción detallada de la carta de presentación 3. Perfecta para un llamado a la acción.</p>
-                </div>
-            </div>-->
-
-            <div class="container">
-                <div class="card">
-                    <img src="img/iconhtml.png" alt="iconohtml" class="iconcard">
-                </div>
-                <div class="card">
-                    <img src="img/iconcss.png" alt="iconocss" class="iconcard">
-                </div>
-                <div class="card">
-                    <img src="img/iconjs.png" alt="iconojs" class="iconcard">
-                </div>
-                <div class="card">
-                    <img src="img/icongit.png" alt="iconogit" class="iconcard">
-                </div>
-                <div class="card">
-                    <img src="img/iconhtml.png" alt="iconohtml" class="iconcard">
-                </div>
-                <div class="card">
-                    <img src="img/iconhtml.png" alt="iconohtml" class="iconcard">
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Otra Sección (Opcional) -->
-        <section class="section3">
-            <h2>Experiencia</h2>
-            <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-                <p class="text-gray-600 text-center">
-                    Aquí puedes agregar más contenido relevante, como una galería de
-                    imágenes, un formulario de contacto o más información sobre tu proyecto.</p>
             </div>
         </section>
 
-        <!-- Tercera Sección (Opcional) -->
-        <section class="section4">
-            <h2>Proyectos Realizados</h2>
-            <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-                <p class="text-gray-600 text-center">
-                    Esta es la tercera sección de la página. Puedes personalizarla
-                    completamente para que se adapte a tus necesidades.</p>
+        <!-- Experience Section -->
+        <section id="experiencia" class="section experience-section">
+            <h2 class="section-title">Experiencia</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="experience-header">
+                        <h3 class="job-title">Exser LTDA</h3>
+                        <span class="job-period">Operador Informático - 2025</span>
+                    </div>
+                    <div class="job-responsibilities">
+                        <p class="responsibility-title">Responsabilidades:</p>
+                        <p class="responsibility-item">- Asesorías para el uso eficiente y eficaz de herramientas office.</p>
+                        <p class="responsibility-item">- Configuración de impresoras.</p>
+                        <p class="responsibility-item">- Diagnóstico y dar solución a fallos de equipos computacionales, realizar reparación o sustitución de componentes dañados.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="experience-header">
+                        <h3 class="job-title">FreeLancer - Actualidad</h3>
+                    </div>
+                    <div class="job-responsibilities">
+                        <p class="responsibility-title">Responsabilidad:</p>
+                        <p class="responsibility-item">- Desarrollando aplicación web para conectar</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyectos Section (placeholder) -->
+        <section id="proyectos" class="section experience-section">
+            <h2 class="section-title">Proyectos</h2>
+            <div class="skill-group">
+                <p style="color: #cccccc;">Sección de proyectos en desarrollo...</p>
             </div>
         </section>
     </main>
 
     <!-- Pie de Página -->
-    <footer id="contacto" class="bg-gray-800 text-white py-8 mt-auto">
+    <footer id="contacto" class="bg-gray-800 text-white py-8 mt-auto section">
         <div class="container mx-auto px-4 text-center">
             <p class="text-lg font-semibold mb-2">Información de Contacto</p>
             <p>Dirección: Calle Falsa 123, Ciudad, País</p>
@@ -148,7 +152,70 @@
     <script>
         // JavaScript para actualizar el año en el footer
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        let darkMode = true;
+
+        themeToggle.addEventListener('click', () => {
+            darkMode = !darkMode;
+            if (darkMode) {
+                body.classList.remove('light');
+                themeToggle.textContent = '🌙';
+            } else {
+                body.classList.add('light');
+                themeToggle.textContent = '☀️';
+            }
+        });
+
+        // Active navigation based on scroll position
+        const navLinks = document.querySelectorAll('.navlink[data-target]');
+        const sections = document.querySelectorAll('.section');
+
+        function setActiveNavLink() {
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120; // Offset para el navbar fijo
+                const sectionHeight = section.offsetHeight;
+                
+                if (window.pageYOffset >= sectionTop && 
+                    window.pageYOffset < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-target') === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Escuchar el scroll para actualizar la navegación activa
+        window.addEventListener('scroll', setActiveNavLink);
+
+        // Smooth scroll para los enlaces de navegación
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('data-target');
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 100; // Offset para el navbar fijo
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Inicializar la navegación activa
+        setActiveNavLink();
     </script>
 </body>
-
 </html>
