@@ -1,37 +1,87 @@
+/*Modo Claro*/
 body.light {
-            background-color: #f6f6f6;
-            color: #222;
-        }
-        body.light .navbar {
-            background: rgba(255,255,255,0.95);
-            border: 1px solid #ccc;
-        }
-        body.light .navitem,
-        body.light .navlink {
-            color: #222;
-        }
-        body.light #myname h1,
-        body.light #myname p {
-            color: #222;
-        }
-        body.light .card {
-            background-color: #fff;
-            color: #222;
-            border: 1px solid #ccc;
-        }
-        body.light .myname-buttons a {
-            background: #222;
-            color: #fff;
-        }
-        body.light .navlink.active {
-            background: rgba(0,0,0,0.1);
-        }
+    background: #f6f6f6;
+    }
 
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body.light .navbar {
+    background: rgba(255,255,255,0.95);
+    border: 1px solid #ccc;
+    border-radius: 25px;
+}
+
+body.light .navitem,
+body.light .navlink {
+    color: #222;
+    
+}
+
+body.light .navlink:hover {
+    background: rgba(0,0,0,0.07);
+}
+
+body.light .headername p,
+body.light .headername h1 {
+    color: #222;
+    
+}
+
+
+body.light .headername a,
+body.light .headername img {
+    background: #222;
+    color: #fff;
+}
+
+body.light .headername a:hover {
+    background: #444;
+    color: #fff700;
+}
+
+body.light .card {
+    background: #fff;
+    color: #222;
+    border: 1px solid #ccc;
+}
+
+body.light .skill-group {
+    background: rgba(0,0,0,0.03);
+    border: 1px solid #ddd;
+}
+
+body.light .skill-group-title {
+    color: #222;
+}
+
+body.light .section-title {
+    color: #222;
+}
+
+body.light .timeline {
+    border-left: 2px solid #ccc;
+}
+
+body.light .timeline-dot {
+    background: #222;
+    border: 2px solid #ccc;
+}
+
+body.light .job-title,
+body.light .job-period,
+body.light .responsibility-title,
+body.light .responsibility-item {
+    color: #222;
+}
+
+body.light footer {
+    background: #eaeaea;
+    color: #222;
+}
+
+body.light hr {
+    border-color: #9d0d0d;
+}
+
+
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -39,19 +89,59 @@ body.light {
             color: #ffffff;
             min-height: 100vh;
             padding: 20px;
-            padding-top: 100px; /* Espacio para el navbar fijo */
+            padding-top: 10px; /* Espacio para el navbar fijo */
             overscroll-behavior: none;
         }
 
-        .mainsecciones {
+       .mainsecciones {
             max-width: 1000px;
             width: 100%;
             margin: 0 auto;
         }
 
         /* Navigation - Ahora fijo */
+        @media (max-width: 900px) {
+    .navbar {
+        width: 95vw;
+        left: 2.5vw;
+        transform: none;
+        top: 10px;
+        border-radius: 18px;
+        padding: 4px;
+    }
+    .navitem {
+        font-size: 1rem;
+        gap: 10px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        width: 98vw;
+        left: 1vw;
+        top: 5px;
+        padding: 2px;
+        border-radius: 12px;
+    }
+    .navitem {
+        flex-direction: column;
+        gap: 6px;
+        font-size: 0.95rem;
+        padding: 4px;
+        align-items: flex-start;
+    }
+    .navlink {
+        width: 100%;
+        text-align: left;
+        padding: 10px 12px;
+        font-size: 1rem;
+    }
+}
         .navbar {
             position: fixed;
+            display: flex;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
@@ -89,48 +179,83 @@ body.light {
             box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
         }
 
-        /* Header */
-        .header {
+        /*------------- Header--------------- */
+        .headername {
+            margin-top: 200px;
             margin-bottom: 60px;
         }
-
-        .profile-name {
-            font-size: 4rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ffffff, #cccccc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .headername span{
+            text-align:left;
+            border-radius: 12px;
+            background-color: #1f2937;
+            font-size:medium;
+            font-weight: 30;
+            justify-content: center;
+            padding: 6px 15px;
+            text-decoration: none;
+            border: 1px solid #242424;
         }
 
-        .profile-subtitle {
-            font-size: 1.1rem;
+        .headername h1 {
+            font-size: 60px;
+            font-weight: 700;
+        }
+
+        .headername p {
+            font-size: 20px;
             color: #cccccc;
             margin-bottom: 20px;
         }
 
-        .profile-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
 
-        .btn {
+        .button{
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;    
+        }
+        .button a{
             padding: 8px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #ffffff4d;
+            border-radius: 15px;
+            background: #ffffff1a;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 20px;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
 
-        .btn:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .button a:hover{
+            background: rgba(178, 92, 7, 0.822);
             border-color: rgba(255, 255, 255, 0.5);
+            transition: 0.3s;
         }
+
+        .button img{
+            color: rgb(255, 255, 255);
+            background-color: #08093ea6;
+            height: 50px;
+            width: 50px;
+            padding: 12px 12px;
+           border: 1px solid #ffffff4d;
+            border-radius: 12px;
+            background: #ffffff1a;
+            color: #ffffff;
+}
+
+        .iconlinkedin:hover{  
+            background-color: #133f7e;
+            border-color: rgba(255, 255, 255, 0.5);
+            transition: 0.3s;
+        }
+
+        .icongmail:hover{ 
+             background-color: #ee1212a6;
+             border-color: rgba(255, 255, 255, 0.5);
+             transition: 0.3s;
+        }
+
+
 
         /* Skills Section */
         .skills-section {
@@ -138,7 +263,7 @@ body.light {
             scroll-margin-top: 100px; /* Offset para el navbar fijo */
         }
 
-        .section-title {
+        .skills-section h2{
             font-size: 1.8rem;
             font-weight: 600;
             margin-bottom: 30px;
@@ -171,20 +296,26 @@ body.light {
             flex-wrap: wrap;
             gap: 8px;
             justify-content: flex-start;
+
         }
 
-        .skill-pill {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .card {
+            background: #3e3b524f;
+            border: 1px solid #ffffff33;
             border-radius: 15px;
-            padding: 6px 12px;
+            padding: 9px 9px;
             font-size: 0.85rem;
             color: #ffffff;
             transition: all 0.3s ease;
+            max-width: 100%;
+            height: 70px;
+            width: 80px;
         }
 
-        .skill-pill:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .card:hover {
+            background: #ffffff33;
+            transform: translateY(-20px);
+            transition: 0.4s ease-out;
         }
 
         .skills-secondary {

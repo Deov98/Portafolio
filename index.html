@@ -27,42 +27,44 @@
                 </button>
             </div>
         </nav>
-
         <!-- Header -->
-        <section id="inicio" class="section">
-            <header class="header">
-                <h1 class="profile-name">Daniel Eduardo Olavarría Varela</h1>
-                <p class="profile-subtitle">Ingeniero Informático - Analista Programador</p>
-                <div class="profile-buttons">
-                    <a href="#" class="btn">Descargar CV</a>
-                    <a href="#" class="btn">M</a>
-                    <a href="#" class="btn">in</a>
+        <section id="inicio">
+            <header class="headername">
+                <span>Disponible para oportunidades</span>
+                <h1>Daniel Eduardo Olavarría Varela</h1>
+                <p>Ingeniero Informático - Analista Programador</p>
+                <div class="button">
+                    <a href="#">Descargar CV</a>
+                    <img class="icongmail" src="img/icongmail.png" href="www.gmail.com" alt="icongmail" target="_blank">
+                    <img class="iconlinkedin"  src="img/iconlinkedin.png"
+                        href="https://www.linkedin.com/in/daniel-eduardo-olavarria-varela-b0190a233/" alt="iconlinkedin"
+                        target="_blank">
                 </div>
             </header>
 
             <!-- Skills Section -->
             <div class="skills-section">
                 <h2 class="section-title">Conocimientos en:</h2>
-                
+
                 <div class="skills-grid">
                     <div class="skill-group">
                         <h3 class="skill-group-title">web</h3>
                         <div class="skill-pills">
-                            <span class="skill-pill">HTML</span>
-                            <span class="skill-pill">CSS</span>
-                            <span class="skill-pill">JavaScript</span>
-                            <span class="skill-pill">Bootstrap</span>
-                            <span class="skill-pill">Tailwindcss</span>
+                            <img src="img/iconhtml.png" alt="iconhtml" class="card">
+                            <img src="img/iconcss.png" alt="iconcss" class="card">
+                            <img src="img/iconjs.png" alt="iconjs" class="card">
+                            <img src="img/iconbootstrap.png" alt="iconbootstrap" class="card">
+                            <img src="img/icontailwind.png" alt="icontailwind" class="card">
                         </div>
                     </div>
 
                     <div class="skill-group">
                         <h3 class="skill-group-title">tecnologías</h3>
                         <div class="skill-pills">
-                            <span class="skill-pill">Vue.js</span>
-                            <span class="skill-pill">Laravel</span>
-                            <span class="skill-pill">Node.js</span>
-                            <span class="skill-pill">Docker</span>
+                            <img src="img/icongit.png" alt="icongit" class="card">
+                            <img src="img/iconlinux.png" alt="iconlinux" class="card">
+                            <img src="img/iconwindows.png" alt="iconwindows" class="card">
+                            <img src="img/iconoffice.png" alt="iconoffice" class="card">
                         </div>
                     </div>
                 </div>
@@ -71,16 +73,16 @@
                     <div class="skill-group">
                         <h3 class="skill-group-title">lenguajes</h3>
                         <div class="skill-pills">
-                            <span class="skill-pill">Python</span>
-                            <span class="skill-pill">Java</span>
-                            <span class="skill-pill">C++</span>
+                            <img src="img/iconjava.png" alt="iconjava" class="card">
+                            <img src="img/iconphp.png" alt="iconphp" class="card">
+                            <img src="img/iconpython.png" alt="iconpython" class="card">
                         </div>
                     </div>
 
                     <div class="skill-group">
                         <h3 class="skill-group-title">base de datos</h3>
                         <div class="skill-pills">
-                            <span class="skill-pill">MySQL</span>
+                           <img src="img/iconmysql.png" alt="iconmysql" class="card">
                         </div>
                     </div>
                 </div>
@@ -99,7 +101,7 @@
         <!-- Experience Section -->
         <section id="experiencia" class="section experience-section">
             <h2 class="section-title">Experiencia</h2>
-            
+
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
@@ -109,9 +111,11 @@
                     </div>
                     <div class="job-responsibilities">
                         <p class="responsibility-title">Responsabilidades:</p>
-                        <p class="responsibility-item">- Asesorías para el uso eficiente y eficaz de herramientas office.</p>
+                        <p class="responsibility-item">- Asesorías para el uso eficiente y eficaz de herramientas
+                            office.</p>
                         <p class="responsibility-item">- Configuración de impresoras.</p>
-                        <p class="responsibility-item">- Diagnóstico y dar solución a fallos de equipos computacionales, realizar reparación o sustitución de componentes dañados.</p>
+                        <p class="responsibility-item">- Diagnóstico y dar solución a fallos de equipos computacionales,
+                            realizar reparación o sustitución de componentes dañados.</p>
                     </div>
                 </div>
 
@@ -175,12 +179,12 @@
 
         function setActiveNavLink() {
             let currentSection = '';
-            
+
             sections.forEach(section => {
                 const sectionTop = section.offsetTop - 120; // Offset para el navbar fijo
                 const sectionHeight = section.offsetHeight;
-                
-                if (window.pageYOffset >= sectionTop && 
+
+                if (window.pageYOffset >= sectionTop &&
                     window.pageYOffset < sectionTop + sectionHeight) {
                     currentSection = section.getAttribute('id');
                 }
@@ -203,7 +207,7 @@
                 e.preventDefault();
                 const targetId = link.getAttribute('data-target');
                 const targetSection = document.getElementById(targetId);
-                
+
                 if (targetSection) {
                     const offsetTop = targetSection.offsetTop - 100; // Offset para el navbar fijo
                     window.scrollTo({
@@ -218,4 +222,5 @@
         setActiveNavLink();
     </script>
 </body>
+
 </html>
