@@ -1,10 +1,13 @@
 /*Modo Claro*/
 body.light {
-    background: #f6f6f6;
+     background-image: url('img/fondolight.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed; /* Esto fija la imagen */
     }
 
 body.light .navbar {
-    background: rgba(255,255,255,0.95);
+    background: rgba(255, 255, 255, 0.464);
     border: 1px solid #ccc;
     border-radius: 25px;
 }
@@ -26,22 +29,13 @@ body.light .headername h1 {
 }
 
 
-body.light .headername a,
-body.light .headername img {
-    background: #222;
-    color: #fff;
-}
+
 
 body.light .headername a:hover {
     background: #444;
-    color: #fff700;
+    color: #ff8000;
 }
 
-body.light .card {
-    background: #fff;
-    color: #222;
-    border: 1px solid #ccc;
-}
 
 body.light .skill-group {
     background: rgba(0,0,0,0.03);
@@ -53,7 +47,7 @@ body.light .skill-group-title {
 }
 
 body.light .section-title {
-    color: #222;
+    color: #ffffff;
 }
 
 body.light .timeline {
@@ -61,7 +55,7 @@ body.light .timeline {
 }
 
 body.light .timeline-dot {
-    background: #222;
+    background: #05ff0d;
     border: 2px solid #ccc;
 }
 
@@ -73,7 +67,7 @@ body.light .responsibility-item {
 }
 
 body.light footer {
-    background: #eaeaea;
+    background: #eaeaea68;
     color: #222;
 }
 
@@ -88,15 +82,18 @@ body.light hr {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: #ffffff;
             min-height: 100vh;
-            padding: 20px;
             padding-top: 10px; /* Espacio para el navbar fijo */
             overscroll-behavior: none;
+            background-image: url('img/fondodark.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed; /* Esto fija la imagen */
         }
 
        .mainsecciones {
             max-width: 1000px;
             width: 100%;
-            margin: 0 auto;
+            margin: 0 0 0 500px;
         }
 
         /* Navigation - Ahora fijo */
@@ -174,11 +171,6 @@ body.light hr {
             background: rgba(255, 255, 255, 0.15);
         }
 
-        .navlink.active {
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
-        }
-
         /*------------- Header--------------- */
         .headername {
             margin-top: 200px;
@@ -206,55 +198,88 @@ body.light hr {
             color: #cccccc;
             margin-bottom: 20px;
         }
-
-
-        .button{
+/* Contenedor de botones */
+        .button-container {
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;    
+            gap: 15px;
+            flex-wrap: wrap;
         }
-        .button a{
-            padding: 8px 16px;
-            border: 1px solid #ffffff4d;
-            border-radius: 15px;
-            background: #ffffff1a;
-            color: #ffffff;
+
+        /* Estilos base para todos los botones */
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 10px 10px 10px;
+            border-radius: 8px;
             text-decoration: none;
-            font-size: 20px;
+            font-weight: 600;
+            font-size: 14px;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .button a:hover{
-            background: rgba(178, 92, 7, 0.822);
-            border-color: rgba(255, 255, 255, 0.5);
-            transition: 0.3s;
-        }
-
-        .button img{
-            color: rgb(255, 255, 255);
-            background-color: #08093ea6;
+            border: 2px solid transparent;
+            width: 110px;
             height: 50px;
-            width: 50px;
-            padding: 12px 12px;
-           border: 1px solid #ffffff4d;
-            border-radius: 12px;
-            background: #ffffff1a;
-            color: #ffffff;
-}
-
-        .iconlinkedin:hover{  
-            background-color: #133f7e;
-            border-color: rgba(255, 255, 255, 0.5);
-            transition: 0.3s;
         }
 
-        .icongmail:hover{ 
-             background-color: #ee1212a6;
-             border-color: rgba(255, 255, 255, 0.5);
-             transition: 0.3s;
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
+        .button-container img{
+            height: 50px;
+            width: 30px;
+            padding: 15px 5px 15px 0px;
+        }
+      
+
+        /* Botón CV - Azul */
+        .btn-cv {
+            background: #2a2c3e;
+            color: white;
+            border-color: #2563eb;
+        }
+
+        .btn-cv:hover {
+            background: #1d4ed8;
+            border-color: #2563eb;
+        }
+
+        /* Botón Contáctame - Blanco con borde */
+        .btn-contact {
+            background: white;
+            color: #374151;
+            border-color: #2563eb;
+        }
+
+        .btn-contact:hover {
+            background: #f9fafb;
+            border-color: #9ca3af;
+        }
+        /* Botón LinkedIn - Azul LinkedIn */
+        .btn-linkedin {
+            background: #0a66c2;
+            color: white;
+            border-color: #2563eb;
+        }
+
+
+        .btn-linkedin:hover {
+            background: #084d94;
+            border-color: #084d94;
+        }
+
+ /* Responsive */
+        @media (max-width: 768px) {
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
 
 
         /* Skills Section */
@@ -263,16 +288,18 @@ body.light hr {
             scroll-margin-top: 100px; /* Offset para el navbar fijo */
         }
 
-        .skills-section h2{
+        .section-title{
             font-size: 1.8rem;
             font-weight: 600;
             margin-bottom: 30px;
         }
 
-        .skills-grid {
+        .skills-primary {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
+            width: 100%;
+            height: 150px;
             margin-bottom: 20px;
         }
 
@@ -280,12 +307,14 @@ body.light hr {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 20px;
+            width: 100%;
+            height: auto;
             padding: 20px;
             backdrop-filter: blur(10px);
         }
 
         .skill-group-title {
-            font-size: 1rem;
+            font-size: 20px;
             font-weight: 500;
             margin-bottom: 15px;
             color: #ffffff;
@@ -300,9 +329,6 @@ body.light hr {
         }
 
         .card {
-            background: #3e3b524f;
-            border: 1px solid #ffffff33;
-            border-radius: 15px;
             padding: 9px 9px;
             font-size: 0.85rem;
             color: #ffffff;
@@ -314,6 +340,7 @@ body.light hr {
 
         .card:hover {
             background: #ffffff33;
+            border-radius: 12px;
             transform: translateY(-20px);
             transition: 0.4s ease-out;
         }
@@ -332,7 +359,7 @@ body.light hr {
 
         .timeline {
             position: relative;
-            padding-left: 30px;
+            padding-left: 32px;
         }
 
         .timeline::before {
@@ -357,7 +384,7 @@ body.light hr {
             top: 5px;
             width: 12px;
             height: 12px;
-            background: #4a90e2;
+            background: #dfea08cd;
             border: 3px solid #1a1a1a;
             border-radius: 50%;
             z-index: 2;
@@ -365,7 +392,7 @@ body.light hr {
 
         .experience-header {
             display: flex;
-            justify-content: space-between;
+            gap: 20px;
             align-items: flex-start;
             margin-bottom: 15px;
             flex-wrap: wrap;
@@ -379,7 +406,7 @@ body.light hr {
 
         .job-period {
             font-size: 0.9rem;
-            color: #4a90e2;
+            color: #ffb509;
             font-weight: 500;
         }
 
@@ -422,7 +449,7 @@ body.light hr {
                 font-size: 2rem;
             }
 
-            .skills-grid,
+            .skills-primary,
             .skills-secondary {
                 grid-template-columns: 1fr;
             }
