@@ -7,8 +7,8 @@ body.light {
     }
 
 body.light .navbar {
-    background: rgba(255, 255, 255, 0.464);
-    border: 1px solid #ccc;
+    background: #ffffff52;
+    border: 1px solid #233d4d;
     border-radius: 25px;
 }
 
@@ -23,23 +23,25 @@ body.light .navlink:hover {
 }
 
 body.light .headername p,
-body.light .headername h1 {
-    color: #222;
-    
+body.light .headername h1,
+body.light .headername span {
+    color: #233;
+}
+
+body.light .headername span{
+    background-color: #fe7f2d;
 }
 
 
-
-
 body.light .headername a:hover {
-    background: #444;
+    background: #233d4d;
     color: #ff8000;
 }
 
 
 body.light .skill-group {
     background: rgba(0,0,0,0.03);
-    border: 1px solid #ddd;
+    border: 1px solid #233d4d;
 }
 
 body.light .skill-group-title {
@@ -47,7 +49,7 @@ body.light .skill-group-title {
 }
 
 body.light .section-title {
-    color: #ffffff;
+    color: #233;
 }
 
 body.light .timeline {
@@ -55,7 +57,7 @@ body.light .timeline {
 }
 
 body.light .timeline-dot {
-    background: #05ff0d;
+    background: #233;
     border: 2px solid #ccc;
 }
 
@@ -63,7 +65,7 @@ body.light .job-title,
 body.light .job-period,
 body.light .responsibility-title,
 body.light .responsibility-item {
-    color: #222;
+    color: #233;
 }
 
 body.light footer {
@@ -77,20 +79,21 @@ body.light hr {
 
 
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #ffffff;
-            min-height: 100vh;
-            padding-top: 10px; /* Espacio para el navbar fijo */
-            overscroll-behavior: none;
-            background-image: url('img/fondodark.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed; /* Esto fija la imagen */
-        }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: #ffffff;
+        min-height: 100vh;
+        padding-top: 10px; /* Espacio para el navbar fijo */
+        overscroll-behavior: none;
+        background-image: url('img/fondodark.jpg');
+     
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed; /* Esto fija la imagen */
+    }
 
-       .mainsecciones {
+    .mainsecciones {
             max-width: 1000px;
             width: 100%;
             margin: 0 auto;
@@ -179,13 +182,14 @@ body.light hr {
         .headername span{
             text-align:left;
             border-radius: 12px;
-            background-color: #1f2937;
+            background-color: #233d4d;
+            color: #fe7f2d;
             font-size:medium;
-            font-weight: 30;
+            font-weight: 500;
             justify-content: center;
             padding: 6px 15px;
             text-decoration: none;
-            border: 1px solid #242424;
+            
         }
 
         .headername h1 {
@@ -215,7 +219,7 @@ body.light hr {
             font-weight: 600;
             font-size: 14px;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 1px solid transparent;
             width: 110px;
             height: 50px;
         }
@@ -234,9 +238,9 @@ body.light hr {
 
         /* Botón CV - Azul */
         .btn-cv {
-            background: #2a2c3e;
+            background: #233d4d;
             color: white;
-            border-color: #2563eb;
+         
         }
 
         .btn-cv:hover {
@@ -355,6 +359,13 @@ body.light hr {
         .experience-section {
             margin-bottom: 60px;
             scroll-margin-top: 100px; /* Offset para el navbar fijo */
+             background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            width: 100%;
+            height: auto;
+            padding: 20px;
+            backdrop-filter: blur(10px);
         }
 
         .timeline {
@@ -425,10 +436,22 @@ body.light hr {
             margin-bottom: 6px;
         }
 
+
+    /* Project Section*/
+    .project-section{
+            margin-bottom: 60px;
+            scroll-margin-top: 100px; /* Offset para el navbar fijo */
+}
+
+
         /* Secciones para el scroll detection */
         .section {
             scroll-margin-top: 100px;
         }
+
+
+
+
 
         /* Responsive Design */
         @media (max-width: 768px) {
