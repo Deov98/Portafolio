@@ -1,25 +1,21 @@
 /*Modo Claro*/
 body.light {
-     background-image: url('img/fondolight.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed; /* Esto fija la imagen */
-    }
+    background: #FAF9F5;
+}
 
 body.light .navbar {
     background: #ffffff52;
-    border: 1px solid #233d4d;
+    border: 1px solid #2D2A26;
     border-radius: 25px;
 }
 
 body.light .navitem,
 body.light .navlink {
-    color: #222;
-    
+    color: #2D2A26;
 }
 
 body.light .navlink:hover {
-    background: rgba(0,0,0,0.07);
+    background: #00000012;
 }
 
 body.light .headername p,
@@ -28,19 +24,17 @@ body.light .headername span {
     color: #233;
 }
 
-body.light .headername span{
+body.light .headername span {
     background-color: #fe7f2d;
 }
-
 
 body.light .headername a:hover {
     background: #233d4d;
     color: #ff8000;
 }
 
-
 body.light .skill-group {
-    background: rgba(0,0,0,0.03);
+    background: #00000008;
     border: 1px solid #233d4d;
 }
 
@@ -77,443 +71,471 @@ body.light hr {
     border-color: #9d0d0d;
 }
 
+/* ================================
+   Base / Modo Oscuro
+   ================================ */
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #233d4d;
+    color: #ffffff;
+    min-height: 100vh;
+    padding-top: 100px;
+    /* espacio para el navbar fijo, igual en todos los tamaños */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    overscroll-behavior: none;
+}
+
+.mainsecciones {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ------------- Navbar (reglas base primero, media queries después las sobreescriben) ------------- */
+.navbar {
+    position: fixed;
+    display: flex;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    max-width: 95vw;
+}
+
+.navitem {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 8px;
+    backdrop-filter: blur(15px);
+    font-size: 20px;
+    flex-wrap: wrap;
+}
+
+.navlink {
+    padding: 10px 20px;
+    border-radius: 18px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 0 2px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.navlink:hover {
+    background: #ffffff26;
+}
+
+/*------------- Header--------------- */
+.headername {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.headername span {
+    display: inline-block;
+    text-align: left;
+    border-radius: 12px;
+    background-color: #2D2A26;
+    color: #fe7f2d;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    font-weight: 500;
+    justify-content: center;
+    padding: 6px 15px;
+    text-decoration: none;
+}
+
+.headername h1 {
+    font-size: clamp(2rem, 6vw, 60px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-top: 15px;
+    word-wrap: break-word;
+}
+
+.headername p {
+    font-size: clamp(1rem, 2.5vw, 20px);
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de botones */
+.button-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Estilos base para todos los botones */
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    width: 110px;
+    height: 50px;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.button-container img {
+    height: 50px;
+    width: 30px;
+    padding: 15px 5px 15px 0px;
+}
+
+/* Botón CV */
+.btn-cv {
+    background: #2D2A26;
+    color: white;
+}
+
+.btn-cv:hover {
+    background: #1d4ed8;
+    border-color: #2563eb;
+}
+
+/* Botón Contáctame */
+.btn-contact {
+    background: white;
+    color: #374151;
+    border-color: #2563eb;
+}
+
+.btn-contact:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+}
+
+/* Botón LinkedIn */
+.btn-linkedin {
+    background: #0a66c2;
+    color: white;
+    border-color: #2563eb;
+}
+
+.btn-linkedin:hover {
+    background: #084d94;
+    border-color: #084d94;
+}
+
+/* Skills Section */
+.skills-section {
+    margin-bottom: 60px;
+    scroll-margin-top: 100px;
+}
+
+.section-title {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.skills-primary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    min-height: 150px;
+    margin-bottom: 20px;
+}
+
+.skill-group {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.skill-group-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+.card {
+    padding: 9px;
+    font-size: 0.85rem;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    max-width: 100%;
+    height: 70px;
+    width: 80px;
+}
+
+.card:hover {
+    background: #ffffff33;
+    border-radius: 12px;
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+}
+
+.skills-secondary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Experience Section */
+.experience-section {
+    margin-bottom: 60px;
+    scroll-margin-top: 100px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.timeline {
+    position: relative;
+    padding-left: 32px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #4a90e2, #357abd);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 30px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -22px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: #dfea08cd;
+    border: 3px solid #1a1a1a;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.experience-header {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.job-title {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.job-period {
+    font-size: 0.9rem;
+    color: #ffb509;
+    font-weight: 500;
+}
+
+.job-responsibilities {
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.responsibility-title {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.responsibility-item {
+    margin-bottom: 6px;
+}
+
+/* Project Section */
+.project-section {
+    margin-bottom: 60px;
+    scroll-margin-top: 100px;
+}
+
+/* Secciones para el scroll detection */
+.section {
+    scroll-margin-top: 100px;
+}
+
+/* ================================
+   Responsive Design
+   Un solo set de breakpoints, declarado al final,
+   para que siempre gane sobre las reglas base.
+   ================================ */
+
+/* Tablet / ventana compacta */
+@media (max-width: 900px) {
     body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-        color: #ffffff;
-        min-height: 100vh;
-        padding-top: 10px; /* Espacio para el navbar fijo */
-        overscroll-behavior: none;
-        background-image: url('img/fondodark.jpg');
-     
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed; /* Esto fija la imagen */
+        padding-top: 90px;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
-    .mainsecciones {
-            max-width: 1000px;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        /* Navigation - Ahora fijo */
-        @media (max-width: 900px) {
     .navbar {
-        width: 95vw;
-        left: 2.5vw;
-        transform: none;
-        top: 10px;
+        max-width: 95vw;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 12px;
         border-radius: 18px;
         padding: 4px;
     }
+
     .navitem {
         font-size: 1rem;
-        gap: 10px;
+        gap: 4px;
         padding: 6px;
+        justify-content: center;
     }
-}
 
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        width: 98vw;
-        left: 1vw;
-        top: 5px;
-        padding: 2px;
-        border-radius: 12px;
+    .navlink {
+        padding: 8px 12px;
+        text-align: center;
     }
-    .navitem {
+
+    .headername {
+        margin-top: 30px;
+    }
+
+    .skills-primary,
+    .skills-secondary {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-header {
         flex-direction: column;
-        gap: 6px;
-        font-size: 0.95rem;
-        padding: 4px;
         align-items: flex-start;
     }
-    .navlink {
-        width: 100%;
-        text-align: left;
-        padding: 10px 12px;
-        font-size: 1rem;
+
+    .job-period {
+        margin-top: 5px;
     }
 }
-        .navbar {
-            position: fixed;
-            display: flex;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
 
-        .navitem {
-            display: flex;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 25px;
-            padding: 8px;
-            backdrop-filter: blur(15px);
-            font-size: 20px;
-        }
+/* Móvil */
+@media (max-width: 600px) {
+    body {
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 130px;
+        /* el navbar pasa a 2 filas, necesita más espacio arriba */
+    }
 
-        .navlink {
-            padding: 10px 20px;
-            border-radius: 18px;
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            margin: 0 2px;
-            position: relative;
-        }
+    .navbar {
+        top: 8px;
+    }
 
-        .navlink:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
+    .navitem {
+        flex-wrap: wrap;
+        gap: 2px;
+        font-size: 0.9rem;
+        justify-content: center;
+    }
 
-        /*------------- Header--------------- */
-        .headername {
-            margin-top: 200px;
-            margin-bottom: 60px;
-        }
-        .headername span{
-            text-align:left;
-            border-radius: 12px;
-            background-color: #233d4d;
-            color: #fe7f2d;
-            font-size:medium;
-            font-weight: 500;
-            justify-content: center;
-            padding: 6px 15px;
-            text-decoration: none;
-            
-        }
+    .navlink {
+        flex: 0 1 auto;
+        padding: 8px 10px;
+        font-size: 0.85rem;
+        text-align: center;
+    }
 
-        .headername h1 {
-            font-size: 60px;
-            font-weight: 700;
-        }
+    .button-container {
+        justify-content: center;
+    }
 
-        .headername p {
-            font-size: 20px;
-            color: #cccccc;
-            margin-bottom: 20px;
-        }
-/* Contenedor de botones */
-        .button-container {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+    .social-btn {
+        width: 92px;
+        height: 44px;
+        padding: 8px;
+        font-size: 12px;
+    }
 
-        /* Estilos base para todos los botones */
-        .social-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 10px 10px 10px 10px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-            width: 110px;
-            height: 50px;
-        }
+    .button-container img {
+        height: 44px;
+        width: 24px;
+        padding: 12px 4px 12px 0px;
+    }
 
-        .social-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
+    .card {
+        height: 56px;
+        width: 64px;
+    }
 
-        .button-container img{
-            height: 50px;
-            width: 30px;
-            padding: 15px 5px 15px 0px;
-        }
-      
+    .timeline {
+        padding-left: 20px;
+    }
 
-        /* Botón CV - Azul */
-        .btn-cv {
-            background: #233d4d;
-            color: white;
-         
-        }
+    .timeline-item {
+        padding-left: 20px;
+    }
 
-        .btn-cv:hover {
-            background: #1d4ed8;
-            border-color: #2563eb;
-        }
-
-        /* Botón Contáctame - Blanco con borde */
-        .btn-contact {
-            background: white;
-            color: #374151;
-            border-color: #2563eb;
-        }
-
-        .btn-contact:hover {
-            background: #f9fafb;
-            border-color: #9ca3af;
-        }
-        /* Botón LinkedIn - Azul LinkedIn */
-        .btn-linkedin {
-            background: #0a66c2;
-            color: white;
-            border-color: #2563eb;
-        }
-
-
-        .btn-linkedin:hover {
-            background: #084d94;
-            border-color: #084d94;
-        }
-
- /* Responsive */
-        @media (max-width: 768px) {
-            .button-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .social-btn {
-                width: 100%;
-                max-width: 200px;
-            }
-        }
-
-
-        /* Skills Section */
-        .skills-section {
-            margin-bottom: 60px;
-            scroll-margin-top: 100px; /* Offset para el navbar fijo */
-        }
-
-        .section-title{
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-
-        .skills-primary {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            width: 100%;
-            height: 150px;
-            margin-bottom: 20px;
-        }
-
-        .skill-group {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            width: 100%;
-            height: auto;
-            padding: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .skill-group-title {
-            font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 15px;
-            color: #ffffff;
-        }
-
-        .skill-pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: flex-start;
-
-        }
-
-        .card {
-            padding: 9px 9px;
-            font-size: 0.85rem;
-            color: #ffffff;
-            transition: all 0.3s ease;
-            max-width: 100%;
-            height: 70px;
-            width: 80px;
-        }
-
-        .card:hover {
-            background: #ffffff33;
-            border-radius: 12px;
-            transform: translateY(-20px);
-            transition: 0.4s ease-out;
-        }
-
-        .skills-secondary {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        /* Experience Section */
-        .experience-section {
-            margin-bottom: 60px;
-            scroll-margin-top: 100px; /* Offset para el navbar fijo */
-             background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            width: 100%;
-            height: auto;
-            padding: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 32px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, #4a90e2, #357abd);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-            padding-left: 30px;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: -22px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            background: #dfea08cd;
-            border: 3px solid #1a1a1a;
-            border-radius: 50%;
-            z-index: 2;
-        }
-
-        .experience-header {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-
-        .job-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #ffffff;
-        }
-
-        .job-period {
-            font-size: 0.9rem;
-            color: #ffb509;
-            font-weight: 500;
-        }
-
-        .job-responsibilities {
-            color: #cccccc;
-            line-height: 1.6;
-        }
-
-        .responsibility-title {
-            font-weight: 500;
-            margin-bottom: 8px;
-            color: #ffffff;
-        }
-
-        .responsibility-item {
-            margin-bottom: 6px;
-        }
-
-
-    /* Project Section*/
-    .project-section{
-            margin-bottom: 60px;
-            scroll-margin-top: 100px; /* Offset para el navbar fijo */
+    .timeline-dot {
+        left: -17px;
+    }
 }
 
+/* Móvil muy angosto */
+@media (max-width: 380px) {
+    .navlink {
+        font-size: 0.75rem;
+        padding: 6px 8px;
+    }
 
-        /* Secciones para el scroll detection */
-        .section {
-            scroll-margin-top: 100px;
-        }
+    .card {
+        height: 48px;
+        width: 54px;
+    }
 
+    .social-btn {
+        width: 78px;
+        height: 40px;
+        font-size: 11px;
+    }
 
-
-
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-                padding-top: 90px;
-            }
-
-            .navbar {
-                top: 15px;
-            }
-
-            .navitem {
-                font-size: 18px;
-            }
-
-            .profile-name {
-                font-size: 2rem;
-            }
-
-            .skills-primary,
-            .skills-secondary {
-                grid-template-columns: 1fr;
-            }
-
-            .experience-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .job-period {
-                margin-top: 5px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .navlink {
-                padding: 8px 15px;
-                font-size: 0.9rem;
-            }
-
-            .navitem {
-                font-size: 16px;
-            }
-
-            .profile-name {
-                font-size: 1.75rem;
-            }
-
-            .profile-buttons {
-                justify-content: center;
-            }
-
-            .timeline {
-                padding-left: 20px;
-            }
-
-            .timeline-item {
-                padding-left: 20px;
-            }
-
-            .timeline-dot {
-                left: -17px;
-            }
-        }
+    .button-container img {
+        height: 40px;
+        width: 20px;
+    }
+}
