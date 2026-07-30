@@ -1,231 +1,336 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
-    <!-- Incluye el CDN de Tailwind CSS para un estilo rápido y responsivo -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Fuente Inter de Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Olavarría · Portafolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <main class="mainsecciones">
-        <!-- Navigation - Ahora fijo -->
-        <nav class="navbar">
-            <div class="navitem">
-                <a href="#inicio" class="navlink active" data-target="inicio">Sobre Mí</a>
-                <a href="#experiencia" class="navlink" data-target="experiencia">Experiencia</a>
-                <a href="#proyectos" class="navlink" data-target="proyectos">Proyectos</a>
-                <button id="theme-toggle" class="navlink" style="background:none;border:none;cursor:pointer;">
-                    🌙
-                </button>
+
+  <div class="pf dark" id="pf">
+
+    <nav class="nav">
+      <span class="logo">Deov<span>_</span></span>
+      <div class="links">
+        <a href="#inicio"       class="link act">Inicio</a>
+        <a href="#skill"        class="link" >Habilidades</a>
+        <a href="#experiencia"  class="link">Experiencia</a>
+        <a href="#proyecto"     class="link">Proyectos</a>
+      
+      </div>
+      <button class="theme" id="themeBtn" title="Cambiar tema">🌙</button>
+    </nav>
+
+    <section id="inicio" class="descripcion">
+      <div class="disponible"><span class="dot"></span>Disponible para oportunidades</div>
+      <h1 class="h1">Daniel Olavarría Varela</h1>
+      <p class="rol">Ingeniero Informático · Analista Programador</p>
+      <p class="bio"> Soy un desarrollador apasionado por
+        crear soluciones digitales eficientes y bien diseñadas, con enfoque en experiencia de usuario y código limpio.
+      </p>
+
+      <div class="social">
+        <!-- Mail -->
+        <a class="icon" title="Correo electrónico">
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <polyline points="2,4 12,13 22,4" />
+          </svg>
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/Deov98" class="icon" title="GitHub">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+          </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/daniel-olavarria-varela-b0190a233/" class="icon" title="LinkedIn">
+          <svg viewBox="0 0 24 24">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+        <!-- CV -->
+        <button id="cvBtn" class="btn-cv">
+          <svg viewBox="0 0 24 24">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          Descargar CV
+        </button>
+      </div>
+    </section>
+
+    <!-- <div class="pf-stats">
+    <div class="pf-stat"><div class="pf-stat-n">3+</div><div class="pf-stat-l">Años experiencia</div></div>
+    <div class="pf-stat"><div class="pf-stat-n">10+</div><div class="pf-stat-l">Tecnologías</div></div>
+    <div class="pf-stat"><div class="pf-stat-n">5+</div><div class="pf-stat-l">Proyectos</div></div>
+  </div>
+-->
+    <section class="section" id="skill" >
+      <div class="sec-title">Habilidades</div>
+
+      <div class="block">
+        <div class="sub">Habilidades técnicas</div>
+        <div class="skill-cats">
+
+          <div class="cat cat-fe">
+            <div class="cat-header">
+              <div class="cat-icon">🖥️</div>
+              <span class="cat-label">Frontend</span>
             </div>
-        </nav>
-        <!-- Header -->
-        <section id="inicio">
-            <header class="headername">
-                <span>Disponible para oportunidades</span>
-                <h1>Daniel Eduardo Olavarría Varela</h1>
-                <p>Ingeniero Informático - Analista Programador</p>
-            <div class="button-container">
-            <a href="#" class="social-btn btn-cv">
-                Descargar CV
-            </a>
-            
-            <a href="https://mail.google.com/" class="social-btn btn-contact" target="_blank">
-            <img src="img/icongmail.png" alt="icongmail">
-                Correo
-            </a>
-
-            <a href="https://www.linkedin.com/in/daniel-olavarria-varela-b0190a233/" target="_blank" class="social-btn btn-linkedin">
-            <img src="img/iconlinkedin.png" alt="iconlinkedin" target="_blank">
-                LinkedIn
-            </a>
+            <div class="cat-body">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Bootstrap</span>
             </div>
-            </header>
+          </div>
 
-            <!-- Skills Section -->
-            <div class="skills-section">
-                <h2 class="section-title">Conocimientos en:</h2>
-
-                <div class="skills-primary">
-                    <div class="skill-group">
-                        <h3 class="skill-group-title">Web</h3>
-                        <div class="skill-pills">
-                            <img src="img/iconhtml.png" alt="iconhtml" class="card">
-                            <img src="img/iconcss.png" alt="iconcss" class="card">
-                            <img src="img/iconjs.png" alt="iconjs" class="card">
-                            <img src="img/iconbootstrap.png" alt="iconbootstrap" class="card">
-                            <img src="img/icontailwind.png" alt="icontailwind" class="card">
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <h3 class="skill-group-title">Tecnologías</h3>
-                        <div class="skill-pills">
-                            <img src="img/icongit.png" alt="icongit" class="card">
-                            <img src="img/iconlinux.png" alt="iconlinux" class="card">
-                            <img src="img/iconwindows.png" alt="iconwindows" class="card">
-                            <img src="img/iconoffice.png" alt="iconoffice" class="card">
-                            <img src="img/dockericon.png" alt="iconodocker" class="card">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-secondary">
-                    <div class="skill-group">
-                        <h3 class="skill-group-title">Lenguajes</h3>
-                        <div class="skill-pills">
-                            <img src="img/iconjava.png" alt="iconjava" class="card">
-                            <img src="img/iconphp.png" alt="iconphp" class="card">
-                            <img src="img/iconpython.png" alt="iconpython" class="card">
-                        </div>
-                    </div>
-
-                    <div class="skill-group">
-                        <h3 class="skill-group-title">Base de Datos</h3>
-                        <div class="skill-pills">
-                           <img src="img/iconmysql.png" alt="iconmysql" class="card">
-                        </div>
-                    </div>
-                </div>
+          <div class="cat cat-be">
+            <div class="cat-header">
+              <div class="cat-icon">⌨️</div>
+              <span class="cat-label">Backend</span>
             </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experiencia" class="section experience-section">
-            <h2 class="section-title">Experiencia</h2>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="experience-header">
-                        <h3 class="job-title">Exser LTDA - Operador Informático</h3>
-                        <span class="job-period">enero 2025 - junio 2025</span>
-                    </div>
-                    <div class="job-responsibilities">
-                        <p class="responsibility-title">Responsabilidades:</p>
-                        <p class="responsibility-item">- Asesorías para el uso eficiente y eficaz de herramientas
-                            office.</p>
-                        <p class="responsibility-item">- Configuración de impresoras.</p>
-                        <p class="responsibility-item">- Diagnóstico y dar solución a fallos de equipos computacionales,
-                            realizar reparación o sustitución de componentes dañados.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="experience-header">
-                        <h3 class="job-title">FreeLancer - Actualidad</h3>
-                    </div>
-                    <div class="job-responsibilities">
-                        <p class="responsibility-title">Responsabilidad:</p>
-                        <p class="responsibility-item">- Desarrollando aplicación web para conectar</p>
-                    </div>
-                </div>
+            <div class="cat-body">
+              <span class="tag">Python</span>
+              <span class="tag">Java</span>
+              <span class="tag">PHP</span>
+              <span class="tag">Node.js</span>
             </div>
-        </section>
+          </div>
 
-        <!-- Proyectos Section (placeholder) -->
-        <section id="proyectos" class="section project-section">
-            <h2 class="section-title">Proyectos</h2>
-            <div class="skill-group">
-                <p style="color: #cccccc;">Sección de proyectos en desarrollo...</p>
+          <div class="cat cat-db">
+            <div class="cat-header">
+              <div class="cat-icon">🗄️</div>
+              <span class="cat-label">Base de datos</span>
             </div>
-        </section>
-    </main>
+            <div class="cat-body">
+              <span class="tag">MySQL</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">SQLite</span>
+            </div>
+          </div>
 
-    <!-- Pie de Página -->
-    <footer id="contacto" class="bg-gray-800 text-white py-8 mt-auto section">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-lg font-semibold mb-2">Información de Contacto</p>
-            <p>Dirección: Calle Falsa 123, Ciudad, País</p>
-            <p>Teléfono: +56941221026</p>
-            <p>Email: danielolavarria13@gmail.com</p>
-            <hr class="my-4 border-gray-700">
-            <p>Copyright &copy; <span id="year"></span> Mi Sitio Web. Todos los derechos reservados.</p>
+          <div class="cat cat-dv">
+            <div class="cat-header">
+              <div class="cat-icon">⚙️</div>
+              <span class="cat-label">DevOps</span>
+            </div>
+            <div class="cat-body">
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Linux</span>
+            </div>
+          </div>
+
+            <div class="cat cat-be">
+            <div class="cat-header">
+              <div class="cat-icon">🔧</div>
+              <span class="cat-label">Soporte & Infraestructura</span>
+            </div>
+            <div class="cat-body">
+              <span class="tag">Soporte Técnico</span>
+              <span class="tag">Active Directory</span>
+              <span class="tag">Redes</span>
+              <span class="tag">Microsoft Office</span>
+            </div>
+          </div>
+
         </div>
-    </footer>
+      </div>
+
+      <div class="block">
+        <div class="sub">Habilidades blandas</div>
+        <div class="soft-grid">
+          <div class="soft">
+            <div class="soft-title">Trabajo en equipo</div>
+            <div class="soft-desc">Colaboro eficazmente en entornos ágiles, adaptándome a distintos roles según las
+              necesidades del proyecto.</div>
+          </div>
+          <div class="soft">
+            <div class="soft-title">Resolución de problemas</div>
+            <div class="soft-desc">Analizo situaciones complejas con enfoque metodológico para encontrar soluciones
+              eficientes y sostenibles.</div>
+          </div>
+          <div class="soft">
+            <div class="soft-title">Comunicación efectiva</div>
+            <div class="soft-desc">Transmito ideas técnicas de forma clara tanto a equipos de desarrollo como a
+              clientes no técnicos.</div>
+          </div>
+          <div class="soft">
+            <div class="soft-title">Aprendizaje continuo</div>
+            <div class="soft-desc">Me mantengo actualizado con las últimas tecnologías y mejores prácticas del
+              desarrollo de software.</div>
+          </div>
+          <div class="soft">
+            <div class="soft-title">Gestión del tiempo</div>
+            <div class="soft-desc">Organizo tareas con prioridades claras para cumplir plazos sin comprometer la
+              calidad del código.</div>
+          </div>
+          <div class="soft">
+            <div class="soft-title">Adaptabilidad</div>
+            <div class="soft-desc">Me ajusto rápidamente a nuevos entornos, tecnologías y metodologías de trabajo con
+              facilidad.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divisor"></div>
+
+    <section  id="experiencia" class="section">
+      <div   class="sec-title">Experiencia y Educación</div>
+      <div class="timeline">
+
+        <div class="tl-item cur">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <span class="tl-role">Operador Informatico -  Soporte Tecnico TI Y Redes</span>
+              <span class="tl-period">Dic. 2025 - Abr 2026</span>
+            </div>
+            <div class="tl-company">Exportadora Exser LTDA · San Felipe, Chile</div>
+            <div class="tl-desc">Desarrollo y mantenimiento de aplicaciones web, integración de APIs y optimización
+              de bases de datos. Colaboración directa con equipos de diseño y producto.</div>
+            <div class="tl-tags">
+              <span class="tl-badge">Soporte Técnico</span>
+              <span class="tl-badge">Active Directory</span>
+              <span class="tl-badge">Redes</span>
+              <span class="tl-badge">Microsoft Office</span>
+              <span class="tl-badge">CCTV</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <span class="tl-role">Operador Informatico</span>
+              <span class="tl-period">Ene 2025 -  May 2025</span>
+            </div>
+            <div class="tl-company">Exportadora Exser LTDA. · San Felipe, Chile</div>
+            <div class="tl-desc">Implementación de interfaces responsivas y componentes reutilizables. Participación
+              en la migración de sistemas legados a arquitecturas modernas.</div>
+            <div class="tl-tags">
+              <span class="tl-badge">Microsoft Office</span>
+              <span class="tl-badge">CCTV</span>
+              <span class="tl-badge">Soporte Técnico</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <span class="tl-role">Técnico de Nivel Superior - Analista Programador</span>
+              <span class="tl-period">2023</span>
+            </div>
+            <div class="tl-company">Universidad tecnológia de Chile, INACAP · Valparaiso, Chile</div>
+            <div class="tl-desc">Apoyo en el desarrollo de módulos internos y automatización de procesos
+              administrativos, adquiriendo experiencia práctica en entornos ágiles.</div>
+            <div class="tl-tags">
+             <!-- <span class="tl-badge">Java</span>
+              <span class="tl-badge">Git</span>--> 
+            </div>
+          </div>
+        </div>
 
 
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <span class="tl-role">Practicante Profesional</span>
+              <span class="tl-period">Abr 2022 -  Jun 2022</span>
+            </div>
+            <div class="tl-company">Buses JM· Los Andes, Chile</div>
+            <div class="tl-desc">Apoyo en el desarrollo de módulos internos y automatización de procesos
+              administrativos, adquiriendo experiencia práctica en entornos ágiles.</div>
+            <div class="tl-tags">
+              <span class="tl-badge">Microsoft Office</span>
+              <span class="tl-badge">Soporte Técnico</span>
+            </div>
+          </div>
+        </div>
 
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <span class="tl-role">Ingenieria en Informática</span>
+              <span class="tl-period">2016 - 2022</span>
+            </div>
+            <div class="tl-company">Universidad tecnológia de Chile, INACAP · Valparaiso, Chile</div>
+            <div class="tl-desc">Apoyo en el desarrollo de módulos internos y automatización de procesos
+              administrativos, adquiriendo experiencia práctica en entornos ágiles.</div>
+            <div class="tl-tags">
+            <!-- <span class="tl-badge">Java</span>
+              <span class="tl-badge">Git</span>--> 
+            </div>
+          </div>
+        </div>
 
+      </div>
+    </section>
 
+    <div class="divisor"></div>
 
-    <script>
-        // JavaScript para actualizar el año en el footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+    <section id="proyecto" class="section">
+      <div class="sec-title">Proyectos</div>
+      <div class="proj-grid">
+        <div class="proj or">
+          <div class="proj-title">Proyecto 1</div>
+          <div class="proj-desc">Descripción breve del proyecto y tecnologías utilizadas.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">HTML</span>
+            <span class="proj-tag">CSS</span><span class="proj-tag">JS</span>
+          </div>
+        </div>
+        <div class="proj gr">
+          <div class="proj-title">Proyecto 2</div>
+          <div class="proj-desc">Descripción breve del proyecto y tecnologías utilizadas.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">MySQL</span>
+          </div>
+        </div>
+        <div class="proj go">
+          <div class="proj-title">Proyecto 3</div>
+          <div class="proj-desc">Descripción breve del proyecto y tecnologías utilizadas.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">PHP</span>
+            <span class="proj-tag">Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Theme toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        let darkMode = true;
+  </div>
 
-        themeToggle.addEventListener('click', () => {
-            darkMode = !darkMode;
-            if (darkMode) {
-                body.classList.remove('light');
-                themeToggle.textContent = '🌙';
-            } else {
-                body.classList.add('light');
-                themeToggle.textContent = '☀️';
-            }
-        });
+ <!--  <section id="contacto" class="section">
+    <div class="sec-title">Contacto</div>
+    <div class="contact-form">
+      <form action="#" method="POST">
+        <input type="text" name="name" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <textarea name="message" placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>--> 
 
-
-        // Active navigation based on scroll position
-        const navLinks = document.querySelectorAll('.navlink[data-target]');
-        const sections = document.querySelectorAll('.section');
-
-        function setActiveNavLink() {
-            let currentSection = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 120; // Offset para el navbar fijo
-                const sectionHeight = section.offsetHeight;
-
-                if (window.pageYOffset >= sectionTop &&
-                    window.pageYOffset < sectionTop + sectionHeight) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('data-target') === currentSection) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        // Escuchar el scroll para actualizar la navegación activa
-        window.addEventListener('scroll', setActiveNavLink);
-
-        // Smooth scroll para los enlaces de navegación
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('data-target');
-                const targetSection = document.getElementById(targetId);
-
-                if (targetSection) {
-                    const offsetTop = targetSection.offsetTop - 100; // Offset para el navbar fijo
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Inicializar la navegación activa
-        setActiveNavLink();
-    </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
