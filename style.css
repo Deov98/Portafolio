@@ -118,6 +118,12 @@ body {
 }
 .mobile-menu a:hover { color: var(--green); }
 
+.main{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
 /* ─── HERO ──────────────────────────────── */
 .hero {
   padding: 80px 40px 64px;
@@ -183,7 +189,7 @@ body {
   stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
 }
 
-/* ─── STATS ─────────────────────────────── */
+/* ─── STATS ─────────────────────────────── 
 .stats {
   display: grid; grid-template-columns: repeat(3,1fr);
   border-bottom: 0.5px solid var(--border2);
@@ -194,7 +200,7 @@ body {
 }
 .stat:last-child { border-right: none; }
 .stat-n { font-size: 24px; font-weight: 500; color: var(--orange); }
-.stat-l { font-size: 11px; color: var(--text3); margin-top: 3px; }
+.stat-l { font-size: 11px; color: var(--text3); margin-top: 3px; }*/
 
 /* ─── SECTION BASE ──────────────────────── */
 .section { padding: 56px 40px; }
@@ -355,7 +361,7 @@ body {
   stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
 }
 
-/* ─── CONTACTO (Opción 3 — Banner CTA) ──── */
+/* ─── CONTACTO ──── */
 .contact-wrap {
   background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 50%, var(--bg1) 100%);
   border: 0.5px solid var(--border);
