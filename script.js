@@ -66,3 +66,70 @@ function copyText(text, label) {
   toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
 }
 
+// ── Certificados — modal ─────────────────
+const certData = [
+  { title: 'Python Esencial', issuer: 'Cisco', year: '2026', img: 'archivos/CertificadoFundamentos.png' },
+  { title: 'HTML & CSS',      issuer: 'freeCodeCamp', year: '2023', img: 'archivos/CertificadoCiscoCurso.png' },
+  // agrega más aquí
+];
+
+function openModal(index) {
+  const c = certData[index];
+  document.getElementById('modalTitle').textContent = c.title;
+  document.getElementById('modalMeta').textContent  = c.issuer + ' · ' + c.year;
+  document.getElementById('modalImg').src = c.img;
+  document.getElementById('modalImg').alt = 'Certificado ' + c.title;
+  document.getElementById('modal').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+}
+
+// cerrar con Escape o clic fuera
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+document.getElementById('modal').addEventListener('click', function(e) {
+  if(e.target === this) closeModal();
+});
+
+
+
+// ── Formulario de contacto ───────────────────────
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+
+contactForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const submitButton = contactForm.querySelector('.form-submit');
+  const submitLabel = submitButton.querySelector('span');
+  const formData = Object.fromEntries(new FormData(contactForm));
+
+  submitButton.disabled = true;
+  submitLabel.textContent = 'Enviando...';
+  formStatus.textContent = '';
+  formStatus.className = 'form-status';
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+
+    if (!response.ok) throw new Error('No se pudo enviar el mensaje');
+
+    contactForm.reset();
+    formStatus.textContent = '¡Mensaje enviado! Te responderé lo antes posible.';
+    formStatus.classList.add('success');
+  } catch (error) {
+    formStatus.textContent = 'No se pudo enviar. Inténtalo otra vez o escríbeme directamente.';
+    formStatus.classList.add('error');
+  } finally {
+    submitButton.disabled = false;
+    submitLabel.textContent = 'Enviar mensaje';
+  }
+});
