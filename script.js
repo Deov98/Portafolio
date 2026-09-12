@@ -68,17 +68,28 @@ function copyText(text, label) {
 
 // ── Certificados — modal ─────────────────
 const certData = [
-  { title: 'Python Esencial', issuer: 'Cisco', year: '2026', img: 'archivos/CertificadoFundamentos.png' },
-  { title: 'HTML & CSS',      issuer: 'freeCodeCamp', year: '2023', img: 'archivos/CertificadoCiscoCurso.png' },
+  { title: 'Python Esencial', issuer: 'Cisco', year: '2026', img: 'archivos/CertificadoFundamentos.png', link: 'https://www.credly.com/badges/c31aed19-50bc-4b1f-a102-3fa1cdf1120e/public_url'},
+  { title: 'HTML & CSS',      issuer: 'AWS', year: '2023', img: 'archivos/awscertificado.png' , link: 'https://www.credly.com/badges/55dc7230-9bb0-49a4-a623-961b2a300634/public_url'},
   // agrega más aquí
 ];
 
 function openModal(index) {
   const c = certData[index];
+
   document.getElementById('modalTitle').textContent = c.title;
   document.getElementById('modalMeta').textContent  = c.issuer + ' · ' + c.year;
-  document.getElementById('modalImg').src = c.img;
-  document.getElementById('modalImg').alt = 'Certificado ' + c.title;
+  document.getElementById('modalImg').src           = c.img;
+  document.getElementById('modalImg').alt           = 'Certificado ' + c.title;
+
+  // actualiza el enlace dinámicamente
+  const link = document.getElementById('modalLink');
+  if (c.link) {
+    link.href         = c.link;
+    link.style.display = 'inline-flex';
+  } else {
+    link.style.display = 'none'; // oculta si no hay enlace
+  }
+
   document.getElementById('modal').classList.add('open');
 }
 
@@ -86,10 +97,11 @@ function closeModal() {
   document.getElementById('modal').classList.remove('open');
 }
 
-// cerrar con Escape o clic fuera
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
 document.getElementById('modal').addEventListener('click', function(e) {
-  if(e.target === this) closeModal();
+  if (e.target === this) closeModal();
 });
 
 

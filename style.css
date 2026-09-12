@@ -498,59 +498,25 @@ border: 0.5px solid rgba(74, 122, 92, 0.25);
   color: var(--green);
 }
 
-.cat-fe .cat-header {
-  border-top: 2px solid var(--orange);
-}
+
+.cat-fe .cat-header { border-top: 2px solid var(--orange);}
 
 .cat-fe .cat-icon {
   background: rgba(196, 114, 58, 0.12);
   color: var(--orange);
 }
 
-.cat-be .cat-header {
-  border-top: 2px solid var(--green);
-}
+.cat-be .cat-header { border-top: 2px solid var(--green); }
 
-.cat-be .cat-icon {
-  background: var(--green-bg);
-  color: var(--green);
-}
+.cat-db .cat-header { border-top: 2px solid var(--gold); }
 
-.cat-db .cat-header {
-  border-top: 2px solid var(--gold);
-}
+.cat-dv .cat-header { border-top: 2px solid var(--green);}
 
-.cat-db .cat-icon {
-  background: rgba(212, 150, 42, 0.12);
-  color: var(--gold);
-}
+.cat-inf .cat-header { border-top: 2px solid var(--gold); }
 
-.cat-dv .cat-header {
-  border-top: 2px solid var(--blue-accent);
-}
+.cat-sec .cat-header { border-top: 2px solid var(--green) ;  }
 
-.cat-dv .cat-icon {
-  background: rgba(106, 122, 156, 0.12);
-  color: var(--blue-accent);
-}
 
-.cat-inf .cat-header {
-  border-top: 2px solid #8a6a9c;
-}
-
-.cat-inf .cat-icon {
-  background: rgba(138, 106, 156, 0.12);
-  color: #8a6a9c;
-}
-
-.cat-sec .cat-header {
-  border-top: 2px solid #c4723a;
-}
-
-.cat-sec .cat-icon {
-  background: rgba(196, 114, 58, 0.12);
-  color: var(--orange);
-}
 
 /* soft skills */
 .soft-grid {
@@ -729,8 +695,13 @@ border: 0.5px solid rgba(74, 122, 92, 0.25);
   transform: translateY(-3px);
 }
 .cert-img {
-  width: 100%; aspect-ratio: 4/3;
-  object-fit: cover; display: block;
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: contain;         /* ← muestra completo */
+  object-position: center;
+  background: var(--bg1);      /* ← color del espacio vacío si sobra */
+  display: block;
+  padding: 8px;                /* ← pequeño respiro alrededor */
 }
 .cert-info { padding: 10px 12px; }
 .cert-title {
@@ -784,6 +755,13 @@ border: 0.5px solid rgba(74, 122, 92, 0.25);
   border-radius: 100px;
   background: var(--green-bg); color: var(--green);
   border: 0.5px solid var(--green-border);
+  text-decoration: none;         /* ← quita el subrayado del enlace */
+  cursor: pointer;               /* ← cursor de mano al pasar encima */
+  transition: background 0.2s;
+}
+.modal-badge:hover {
+  background: var(--green);
+  color: #f2ede6;
 }
 
 
