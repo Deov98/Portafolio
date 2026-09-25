@@ -26,10 +26,8 @@ html {
   --green: #4a7a5c;
   --green2: #3d6b4f;
   --green-bg: #4a7a5c1f; /*Icon*/
-  --green-border: #4a7a5c4d;
   --orange: #c4723a;
   --gold: #d4962a;
-  --blue-accent: #6a7a9c;
 }
 
 /* ─── TOKENS LIGHT ──────────────────────── */
@@ -47,14 +45,11 @@ body.light {
   --green: #2d6644;
   --green2: #245538;
   --green-bg: #2d664414;
-  --green-border: #2d664440;
   --orange: #a84f28;
   --gold: #8a6010;
-  --blue-accent: #4a5a7c;
+
 }
 
-
-/* ─── BASE ──────────────────────────────── */
 body {
   font-family: 'Inter', sans-serif;
   color: var(--text1);
@@ -212,25 +207,37 @@ border: 0.5px solid rgba(74, 122, 92, 0.25);
 .mobile-menu {
   display: none;
   flex-direction: column;
-  background: var(--bg1);
-  border-bottom: 0.5px solid var(--border);
+  position: fixed;          /* ← fijo como el nav */
+  top: 78px;                /* ← justo debajo del nav (top: 12px + height: 54px + margen) */
+  left: 20px;               /* ← mismo margen que el nav */
+  right: 20px;              /* ← mismo margen que el nav */
+  background: --bg1;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 0.5px solid rgba(74, 122, 92, 0.25);
+  border-radius: 16px;
   padding: 16px 24px;
-  gap: 16px;
+  gap: 4px;
+  z-index: 99;              /* ← debajo del nav pero sobre todo lo demás */
 }
 
-.mobile-menu.open {
-  display: flex;
-}
+.mobile-menu.open { display: flex; }
 
 .mobile-menu a {
   font-size: 14px;
   color: var(--text3);
   text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 0.5px solid var(--border2);
   transition: color 0.2s;
 }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover      { color: var(--green); }
 
-.mobile-menu a:hover {
-  color: var(--green);
+/* modo claro */
+body.light .mobile-menu {
+  background: rgba(248, 250, 248, 0.95);
+  border-color: rgba(45, 102, 68, 0.2);
 }
 
 .main {
@@ -259,7 +266,7 @@ border: 0.5px solid rgba(74, 122, 92, 0.25);
   border-radius: 100px;
   background: var(--green-bg);
   color: var(--green);
-  border: 0.5px solid var(--green-border);
+  border: 0.5px solid var(--green-bg);
   margin-bottom: 24px;
 }
 
@@ -493,15 +500,15 @@ border: 0.5px solid rgba(74, 122, 92, 0.25);
   font-size: 11px;
   padding: 3px 10px;
   border-radius: 100px;
-  border: 0.5px solid var(--border);
-  color: var(--text3);
+  border: 0.5px solid var(--green2);
+  color: var(--green2);
   background: var(--bg1);
   transition: all 0.2s;
 }
 
 .skill-tag:hover {
-  border-color: var(--green);
-  color: var(--green);
+  border-color: var(--orange);
+  color: var(--orange);
 }
 
 /*
@@ -683,18 +690,90 @@ border: 0.5px solid rgba(74, 122, 92, 0.25);
 }
 
 
-/* ─── CERTIFICADOS ──────────────────────── */
+/* ─── SPLIT FORMACIÓN + CERTIFICACIONES ─── */
+.cert-split {
+  display: grid;
+  grid-template-columns: 1fr 0.5px 1fr;
+  gap: 0;
+  align-items: start;
+}
+.cert-col:first-child {
+  padding-right: 40px;  /* ← separa la columna izquierda del divisor */
+}
+
+.cert-col:last-child {
+  padding-left: 40px;   /* ← separa la columna derecha del divisor */
+}
+/* separador vertical */
+.cert-col-divider {
+  background: var(--border2);
+  width: 0.5px;
+  min-height: 100%;
+  margin: 0;
+  
+}
+
+/* título de cada columna */
+.cert-col-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text2);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 0.5px solid var(--border2);
+}
+
+/* ─── FORMACIÓN ACADÉMICA ─── */
+.formacion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.formacion-item {
+  background: var(--bg2);
+  border: 0.5px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  transition: border-color 0.2s;
+  
+}
+.formacion-item:hover { border-color: var(--green); }
+.formacion-period {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 5px;
+}
+.formacion-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text1);
+  margin-bottom: 3px;
+}
+.formacion-place {
+  font-size: 11px;
+  color: var(--orange);
+  margin-bottom: 10px;
+}
+
+/* ─── CERTIFICACIONES (sin modal, con link) ─── */
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
 }
 .cert-card {
   background: var(--bg2);
   border: 0.5px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
-  cursor: pointer;
+  text-decoration: none;
+  display: block;
   transition: border-color 0.2s, transform 0.2s;
 }
 .cert-card:hover {
@@ -703,73 +782,24 @@ border: 0.5px solid rgba(74, 122, 92, 0.25);
 }
 .cert-img {
   width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: contain;         /* ← muestra completo */
+  aspect-ratio: 1/1;
+  object-fit: contain;
   object-position: center;
-  background: var(--bg1);      /* ← color del espacio vacío si sobra */
+  background: var(--bg1);
+  padding: 10px;
   display: block;
-  padding: 8px;                /* ← pequeño respiro alrededor */
 }
 .cert-info { padding: 10px 12px; }
 .cert-title {
-  font-size: 13px; font-weight: 500;
-  color: var(--text1); margin-bottom: 3px;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text1);
+  margin-bottom: 3px;
+  line-height: 1.4;
 }
 .cert-issuer { font-size: 11px; color: var(--text3); }
-.cert-year   { font-size: 10px; color: var(--text4); margin-top: 4px; }
+.cert-year   { font-size: 10px; color: var(--text4); margin-top: 3px; }
 
-/* modal */
-.modal-wrap {
-  display: none;
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,0.75);
-  z-index: 9999;
-  align-items: center; justify-content: center;
-  padding: 24px;
-}
-.modal-wrap.open { display: flex; }
-.modal-box {
-  background: var(--bg2);
-  border: 0.5px solid var(--border);
-  border-radius: 16px;
-  max-width: 720px; width: 100%;
-  overflow: hidden;
-}
-.modal-header {
-  display: flex; align-items: center;
-  justify-content: space-between;
-  padding: 14px 18px;
-  border-bottom: 0.5px solid var(--border);
-}
-.modal-title { font-size: 14px; font-weight: 500; color: var(--text1); }
-.modal-close {
-  background: none; border: none; cursor: pointer;
-  color: var(--text3); font-size: 18px;
-  padding: 4px 8px; border-radius: 8px;
-}
-.modal-close:hover { background: var(--bg3); color: var(--text1); }
-.modal-img-wrap { width: 100%; background: var(--bg1); }
-.modal-img-wrap img { width: 100%; height: auto; max-height: 500px; object-fit: contain; display: block; }
-.modal-footer {
-  padding: 14px 18px;
-  border-top: 0.5px solid var(--border);
-  display: flex; align-items: center; justify-content: space-between;
-}
-.modal-meta  { font-size: 12px; color: var(--text3); }
-.modal-badge {
-  font-size: 11px; padding: 3px 10px;
-  border-radius: 100px;
-  background: var(--green-bg); color: var(--green);
-  border: 0.5px solid var(--green-border);
-  text-decoration: none;         /* ← quita el subrayado del enlace */
-  cursor: pointer;               /* ← cursor de mano al pasar encima */
-  transition: background 0.2s;
-}
-.modal-badge:hover {
-  background: var(--green);
-  color: #f2ede6;
-}
 
 
 /* ─── PROJECTS ──────────────────────────── */
@@ -830,7 +860,7 @@ border: 0.5px solid rgba(74, 122, 92, 0.25);
   border-radius: 100px;
   background: var(--green-bg);
   color: var(--green);
-  border: 0.5px solid var(--green-border);
+  border: 0.5px solid var(--green);
 }
 
 .proj-link {
@@ -913,7 +943,7 @@ border: 0.5px solid rgba(74, 122, 92, 0.25);
   border-radius: 100px;
   background: var(--green-bg);
   color: var(--green);
-  border: 0.5px solid var(--green-border);
+  border: 0.5px solid var(--green-bg);
   margin-bottom: 20px;
   position: relative;
   z-index: 1;
@@ -1240,7 +1270,7 @@ footer {
   height: 18px;
   border-radius: 50%;
   background: var(--green-bg);
-  border: 0.5px solid var(--green-border);
+  border: 0.5px solid var(--green-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1358,6 +1388,25 @@ footer {
 
   .proj-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .cert-split {
+    grid-template-columns: 1fr;
+  }
+  .cert-col:first-child {
+    padding-right: 0;
+    padding-bottom: 28px;
+  }
+  .cert-col:last-child {
+    padding-left: 0;
+    padding-top: 28px;
+  }
+  .cert-col-divider {
+    width: 100%;
+    height: 0.5px;
   }
 }
 

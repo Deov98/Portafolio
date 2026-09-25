@@ -7,7 +7,7 @@
   <title>Daniel Olavarría · Ingeniero Informático</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet"/>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -329,51 +329,65 @@
     <div class="divider"></div>
 
     <section class="section" id="certificados">
-      <div class="section-title">Certificaciones e Insignias</div>
+      <div class="section-title">Formación y Certificaciones</div>
 
-      <div class="cert-grid">
+      <div class="cert-split">
 
-        <div class="cert-card" onclick="openModal(0)">
-          <img class="cert-img" src="archivos/bagdeciberseguridad.png" alt="Certificado ciberseguridad" />
-          <div class="cert-info">
-            <div class="cert-title">Fundamentos de Ciberseguridad</div>
-            <div class="cert-issuer">Cisco</div>
-            <div class="cert-year">2026</div>
+        <!-- ── COLUMNA IZQUIERDA — Formación académica ── -->
+        <div class="cert-col">
+          <div class="cert-col-title"> Formación académica </div>
+
+          <div class="formacion-list">
+
+            <div class="formacion-item">
+              <div class="formacion-period">2016 — 2022</div>
+              <div class="formacion-name">Ingeniería en Informática</div>
+              <div class="formacion-place">INACAP</div>
+            </div>
+
+            <div class="formacion-item">
+              <div class="formacion-period">2023</div>
+              <div class="formacion-name">Analista Programador</div>
+              <div class="formacion-place">INACAP</div>
+            </div>
           </div>
         </div>
 
-        <div class="cert-card" onclick="openModal(1)">
-          <img class="cert-img" src="archivos/awsbadge.png" alt="Certificado AWS" />
-          <div class="cert-info">
-            <div class="cert-title">Fundamentos de la Nube AWS</div>
-            <div class="cert-issuer">AWS</div>
-            <div class="cert-year">2023</div>
+        <!-- separador vertical -->
+        <div class="cert-col-divider"></div>
+
+        <!-- ── COLUMNA DERECHA — Certificaciones ── -->
+        <div class="cert-col">
+          <div class="cert-col-title">
+            Certificaciones e Insignias
+          </div>
+
+          <div class="cert-grid">
+
+            <a class="cert-card" href="https://www.credly.com/badges/c31aed19-50bc-4b1f-a102-3fa1cdf1120e/public_url"
+              target="_blank" rel="noopener noreferrer">
+              <img class="cert-img" src="archivos/bagdeciberseguridad.png" alt="Fundamentos de Ciberseguridad" />
+              <div class="cert-info">
+                <div class="cert-title">Fundamentos de Ciberseguridad</div>
+                <div class="cert-issuer">Cisco</div>
+                <div class="cert-year">2026</div>
+              </div>
+            </a>
+
+            <a class="cert-card" href="https://www.credly.com/badges/55dc7230-9bb0-49a4-a623-961b2a300634/public_url" target="_blank"
+              rel="noopener noreferrer">
+              <img class="cert-img" src="archivos/awsbadge.png" alt="AWS Cloud Foundations" />
+              <div class="cert-info">
+                <div class="cert-title">AWS Cloud Foundations </div>
+                <div class="cert-issuer">Cisco</div>
+                <div class="cert-year">2026</div>
+              </div>
+            </a>
           </div>
         </div>
-
-        <!-- repite el bloque para cada certificado -->
 
       </div>
     </section>
-
-    <!-- Modal -->
-    <div class="modal-wrap" id="modal">
-      <div class="modal-box">
-        <div class="modal-header">
-          <span class="modal-title" id="modalTitle"></span>
-          <button class="modal-close" onclick="closeModal()">✕</button>
-        </div>
-        <div class="modal-img-wrap">
-          <img id="modalImg" src="" alt="" />
-        </div>
-        <div class="modal-footer">
-          <span class="modal-meta" id="modalMeta"></span>
-          <a id="modalLink" href="#" target="_blank" rel="noopener noreferrer" class="modal-badge">
-            Ver en Credly →
-          </a>
-        </div>
-      </div>
-    </div>
 
 
     <!-- ── PROYECTOS ────────────────────────────── -->
