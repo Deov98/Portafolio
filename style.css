@@ -1428,3 +1428,90 @@ footer {
     border-bottom: none;
   }
 }
+
+/* ─── CONTACTO RESPONSIVO ─── */
+@media (max-width: 768px) {
+
+  .contact-wrap {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  /* apila las dos columnas en vertical */
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  /* centra los iconos */
+  .contact-icons {
+    justify-content: center;
+  }
+
+  /* centra el badge de disponible */
+  .contact-available {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* oculta los separadores verticales en móvil */
+  .c-sep {
+    display: none;
+  }
+
+  /* el botón de correo ocupa todo el ancho */
+  .c-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* el formulario sin padding extra */
+  .contact-form {
+    padding: 18px 16px;
+  }
+
+  /* título más pequeño */
+  .contact-title {
+    font-size: clamp(24px, 7vw, 36px);
+  }
+
+  /* texto más compacto */
+  .contact-sub {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .contact-wrap {
+    padding: 20px 14px;
+  }
+
+  /* iconos más pequeños */
+  .c-icon-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+
+  .c-icon-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* inputs más cómodos en pantalla pequeña */
+  .form-field input,
+  .form-field textarea {
+    font-size: 16px; /* ← evita que iOS haga zoom al enfocar */
+    padding: 11px 12px;
+  }
+
+  .form-submit {
+    font-size: 14px;
+  }
+}
