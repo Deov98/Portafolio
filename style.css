@@ -11,7 +11,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ─── TOKENS DARK (default) ─────────────── */
+/* ─── DARK (default) ─────────────── */
 :root {
   --bg0: #110f0d; /*Fondo*/
   --bg1: #1613106f; /*Nav*/
@@ -30,7 +30,7 @@ html {
   --gold: #d4962a;
 }
 
-/* ─── TOKENS LIGHT ──────────────────────── */
+/* ───  LIGHT ──────────────────────── */
 body.light {
   --bg0: #f5f2ed; /*Fondo*/
   --bg1: #edeae479; /*Nav*/
@@ -55,7 +55,7 @@ body {
   color: var(--text1);
   transition: background 0.3s, color 0.3s;
   line-height: 1.6;
-  background-color: var(--bg0); /* ← negro cálido exacto de la imagen */
+  background-color: var(--bg0);
   padding-top: 78px; /* altura nav (54px) + top (12px) + margen extra (12px) */
 }
 
@@ -72,17 +72,6 @@ body::before {
   z-index: 0;
 }
 
-/* ─── GLOW VERDE — encima del grid
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at 50% 30%, var(--bg0) 0%, transparent 55%),
-    radial-gradient(circle at 20% 80%, var(--bg0) 0%, transparent 40%);
-  pointer-events: none;
-  z-index: 0;
-} ─── */ 
 
 .nav, .hero, .stats,
 .section, .divider,
@@ -96,9 +85,9 @@ footer, .toast,
 /* ─── NAVBAR ────────────────────────────── */
 .nav {
   position: fixed;
-  top: 12px;                    /* ← separación del borde superior */
-  left: 20px;                   /* ← separación izquierda */
-  right: 20px;                  /* ← separación derecha */
+  top: 12px;                    
+  left: 20px;                
+  right: 20px;                  
   z-index: 100;
   
   background: var(--bg1);
@@ -209,8 +198,8 @@ border: 0.5px solid rgba(74, 122, 92, 0.25);
   flex-direction: column;
   position: fixed;          /* ← fijo como el nav */
   top: 78px;                /* ← justo debajo del nav (top: 12px + height: 54px + margen) */
-  left: 20px;               /* ← mismo margen que el nav */
-  right: 20px;              /* ← mismo margen que el nav */
+  left: 20px;              
+  right: 20px;              
   background: --bg1;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -248,7 +237,7 @@ body.light .mobile-menu {
 
 /* ─── HERO ──────────────────────────────── */
 .hero {
-   padding: 60px 40px 64px; /* ← el padding-top del body ya compensó el nav */
+   padding: 60px 40px 64px; 
   text-align: center;
   border-bottom: 0.5px solid var(--border2);
   position: relative;
@@ -387,19 +376,6 @@ body.light .mobile-menu {
   stroke-linejoin: round;
 }
 
-/* ─── STATS ─────────────────────────────── 
-.stats {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  border-bottom: 0.5px solid var(--border2);
-}
-.stat {
-  padding: 22px; text-align: center;
-  border-right: 0.5px solid var(--border2);
-}
-.stat:last-child { border-right: none; }
-.stat-n { font-size: 24px; font-weight: 500; color: var(--orange); }
-.stat-l { font-size: 11px; color: var(--text3); margin-top: 3px; }*/
-
 /* ─── SECTION BASE ──────────────────────── */
 .section {
   padding: 56px 40px;
@@ -472,16 +448,6 @@ body.light .mobile-menu {
   justify-content: center;
 }
 
-/* .cat-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  flex-shrink: 0;
-}*/
 
 .cat-label {
   font-size: 12px;
@@ -511,25 +477,6 @@ body.light .mobile-menu {
   color: var(--orange);
 }
 
-/*
-.cat-fe .cat-header { border-top: 2px solid var(--orange);}
-
-.cat-fe .cat-icon {
-  background: rgba(196, 114, 58, 0.12);
-  color: var(--orange);
-}
-
-.cat-be .cat-header { border-top: 2px solid var(--green); }
-
-.cat-db .cat-header { border-top: 2px solid var(--gold); }
-
-.cat-dv .cat-header { border-top: 2px solid var(--green);}
-
-.cat-inf .cat-header { border-top: 2px solid var(--gold); }
-
-.cat-sec .cat-header { border-top: 2px solid var(--green) ;  }
-
-*/
 
 /* soft skills */
 .soft-grid {
@@ -822,12 +769,12 @@ body.light .mobile-menu {
   transform: translateY(-3px);
 }
 
-.proj-card.or {
+.proj-card.bl {
   border-top: 2px solid var(--orange);
 }
 
-.proj-card.gr {
-  border-top: 2px solid var(--green);
+.proj-card.md {
+  border-top: 2px solid var(--orange);
 }
 
 .proj-card.go {
@@ -1087,6 +1034,9 @@ body.light .mobile-menu {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+.c-cta-btn:hover{
+   background: var(--orange);
+}
 
 /* separador de íconos */
 .c-sep {
@@ -1168,7 +1118,7 @@ body.light .mobile-menu {
 }
 
 .form-submit:hover {
-  background: var(--green2);
+  background: var(--orange);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(74, 122, 92, 0.24);
 }
@@ -1307,10 +1257,12 @@ footer {
   transform: translateY(16px);
   transition: opacity 0.3s, transform 0.3s;
   z-index: 998;
-  box-shadow: 0 4px 20px rgba(74, 122, 92, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#back-to-top:hover {
+  background: var(--orange);
 }
 
 #back-to-top.visible {
@@ -1507,7 +1459,7 @@ footer {
   /* inputs más cómodos en pantalla pequeña */
   .form-field input,
   .form-field textarea {
-    font-size: 16px; /* ← evita que iOS haga zoom al enfocar */
+    font-size: 16px; 
     padding: 11px 12px;
   }
 
