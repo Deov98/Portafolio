@@ -13,6 +13,7 @@ html {
 
 /* ─── DARK (default) ─────────────── */
 :root {
+  
   --bg0: #110f0d; /*Fondo*/
   --bg1: #1613106f; /*Nav*/
   --bg2: #1a1612; /*Cards*/
@@ -55,18 +56,21 @@ body {
   color: var(--text1);
   transition: background 0.3s, color 0.3s;
   line-height: 1.6;
-  background-color: var(--bg0);
+ background-color: var(--bg0);
+  background-image:
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(74, 122, 92, 0.18), transparent 70%);
+  background-repeat: no-repeat;
   padding-top: 78px; /* altura nav (54px) + top (12px) + margen extra (12px) */
 }
 
 /* ─── GRID LINES — ocupa toda la página ─── */
 body::before {
-  content: '';
+ content: '';
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(#4a7a5c09 1px, transparent 1px),
-    linear-gradient(90deg, #4a7a5c09 1px, transparent 1px);
+    linear-gradient(rgba(74, 122, 92, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 122, 92, 0.07) 1px, transparent 1px);
   background-size: 50px 50px;
   pointer-events: none;
   z-index: 0;
@@ -314,6 +318,8 @@ body.light .mobile-menu {
   flex-wrap: wrap;
 }
 
+
+
 .icon-btn {
   width: 40px;
   height: 40px;
@@ -329,11 +335,11 @@ body.light .mobile-menu {
   text-decoration: none;
 }
 
-.icon-btn:hover {
+/*.icon-btn:hover {
   border-color: var(--green);
   color: var(--green);
   background: var(--green-bg);
-}
+}*/
 
 .icon-btn svg {
   width: 17px;
@@ -344,6 +350,23 @@ body.light .mobile-menu {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+.icon-gm:hover { 
+  background: var(--orange);
+  color: #f2ede6;
+  border-color: var(--orange);
+}
+.icon-gt:hover { 
+  background:  #5C0C7D;
+  color: #f2ede6;
+  background: #5C0C7D;
+}
+.icon-li:hover { 
+  background: #276FF5;
+  color:#f2ede6;
+  border-color: 276FF5;
+}
+
 
 .cv-btn {
   height: 40px;
@@ -408,76 +431,146 @@ body.light .mobile-menu {
 }
 
 /* ─── SKILLS ────────────────────────────── */
-.skills-block {
-  margin-bottom: 36px;
-}
-
-.skills-subtitle {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text2);
-  margin-bottom: 16px;
-  padding-bottom: 10px;
-  border-bottom: 0.5px solid var(--border2);
-}
-
-.skill-cats {
+/* ─── Grilla ─── */
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ─── Tarjeta con vidrio leve ─── */
+.skill-card {
+  --c: #8fbf9f; /* color por defecto, cada tarjeta lo sobreescribe inline */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px 22px 26px;
+  border-radius: 16px;
+  background: #ffffff09;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, border-color 0.3s ease,
+              background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Barra de acento inferior */
+.skill-card::after {
+  content: '';
+  position: absolute;
+  left: 22px;
+  bottom: 14px;
+  width: 40px;
+  height: 2px;
+  border-radius: 3px;
+  background: var(--c);
+  opacity: 0.85;
+  transition: width 0.35s ease, opacity 0.3s ease;
+}
+
+/* ─── Encabezado ─── */
+.skill-head {
+  display: flex;
+  align-items: center;
   gap: 12px;
 }
 
-.skill-cat {
-  background: var(--bg2);
-  border: 0.5px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: border-color 0.2s;
+.skill-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: var(--c);
+  background: rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.skill-cat:hover {
-  border-color: var(--green);
+.skill-icon svg {
+  width: 18px;
+  height: 18px;
 }
 
-.cat-header {
-  padding: 12px 14px;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  border-bottom: 0.5px solid var(--border);
-  justify-content: center;
+.skill-title {
+  margin: 0;
+  font-size: 1 rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
 }
 
-
-.cat-label {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text2);
-}
-
-.cat-body {
-  padding: 12px 14px;
+/* ─── Etiquetas ─── */
+.skill-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.skill-tag {
-  font-size: 11px;
-  padding: 3px 10px;
-  border-radius: 100px;
-  border: 0.5px solid var(--green2);
-  color: var(--green2);
-  background: var(--bg2);
-  transition: all 0.2s;
+.skill-tags li {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid transparent;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-.skill-tag:hover {
-  border-color: var(--orange);
-  color: var(--orange);
+/* ─── Hover: cada categoría toma su color ─── */
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--c) 60%, transparent);
+  background: color-mix(in srgb, var(--c) 8%, rgba(255, 255, 255, 0.03));
+  box-shadow: 0 10px 32px color-mix(in srgb, var(--c) 18%, transparent);
 }
 
+.skill-card:hover::after {
+  width: 64px;
+  opacity: 1;
+}
 
+.skill-card:hover .skill-icon {
+  background: color-mix(in srgb, var(--c) 18%, transparent);
+  transform: scale(1.06);
+}
+
+.skill-card:hover .skill-title {
+  color: var(--c);
+}
+
+.skill-card:hover .skill-tags li {
+  background: color-mix(in srgb, var(--c) 12%, transparent);
+  border-color: color-mix(in srgb, var(--c) 28%, transparent);
+}
+
+/* ─── Modo claro ─── */
+.pf:not(.dark) .skill-card {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+.pf:not(.dark) .skill-icon,
+.pf:not(.dark) .skill-tags li {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}
+
+/* Respeta usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .skill-card, .skill-card * { transition: none; }
+  .skill-card:hover { transform: none; }
+}
 /* soft skills */
 .soft-grid {
   display: grid;
@@ -674,6 +767,7 @@ body.light .mobile-menu {
 }
 
 /* ─── FORMACIÓN ACADÉMICA ─── */
+
 .formacion-list {
   display: flex;
   flex-direction: column;
@@ -708,13 +802,47 @@ body.light .mobile-menu {
   margin-bottom: 10px;
 }
 
-/* ─── CERTIFICACIONES (sin modal, con link) ─── */
+
+.cert-logo {
+  --logo-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 16px;              /* centrado dentro de la tarjeta */
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  color: var(--logo-color);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.cert-logo--aws   { --logo-color: #ff9900; }   /* naranja AWS */
+.cert-logo--cisco { --logo-color: #049fd9; }   /* azul Cisco */
+
+.cert-logo svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cert-logo svg path {
+  fill: currentColor;
+}
+
+.cert-card:hover .cert-logo {
+  border-color: var(--logo-color);
+  background: color-mix(in srgb, var(--logo-color) 14%, transparent);
+}
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 10px;
 }
 .cert-card {
+   display: flex;
+  flex-direction: column;
   background: var(--bg2);
   border: 0.5px solid var(--border);
   border-radius: 12px;
@@ -747,6 +875,14 @@ body.light .mobile-menu {
 .cert-issuer { font-size: 11px; color: var(--text3); }
 .cert-year   { font-size: 10px; color: var(--text4); margin-top: 3px; }
 
+.cert-cisco { 
+  background: color-mix(in srgb, #049fd9 8%, transparent);
+  border: 1px solid color-mix(in srgb, #049fd9 45%, transparent);
+}
+.cert-aws { 
+  background: color-mix(in srgb, #ff9900 8%, transparent);
+  border: 1px solid color-mix(in srgb, #ff9900 45%, transparent);
+}
 
 
 /* ─── PROJECTS ──────────────────────────── */
