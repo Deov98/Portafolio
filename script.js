@@ -33,6 +33,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 // ── Active nav en scroll ─────────────────────
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
+
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(s => {
